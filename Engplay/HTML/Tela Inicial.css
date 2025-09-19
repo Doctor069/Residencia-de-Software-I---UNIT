@@ -1,1 +1,25 @@
+.topo {
+  font-family: "Arial";
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(90deg, #0a1d4f, #0f3274);
+  padding: 10px 20px;
+  height: 60px;
+  color: #fff;
+}
 
+.topobarrapesquisar {
+  flex: 1;
+  max-width: 500px;
+  margin: 0 30px;
+}
+
+.topobarrapesquisar input {
+  width: 100%;
+  padding: 8px 15px;
+  border-radius: 20px;
+  border: none;
+  outline: none;
+  font-size: 14px;
+}
