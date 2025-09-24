@@ -1,0 +1,226 @@
+/* RESET BÁSICO */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", Arial, Helvetica, sans-serif;
+}
+
+html, body {
+    height: 100%;
+    background-color: #2f353b;
+    color: white;
+    overflow: hidden;
+}
+
+/* ===== BARRA SUPERIOR ===== */
+#superior {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 70px;
+    background: linear-gradient(to right, #0A1B40, #142b6f);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 24px;
+    z-index: 1000;
+    gap: 20px;
+}
+
+/* ESQUERDA (menu + logo) */
+#superior-left {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex: 0 0 auto;
+}
+
+#superior-left button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+#superior-left img {
+    height: 40px;
+    display: block;
+}
+
+/* ===== FORMULÁRIO DE BUSCA (CENTRO) ===== */
+#superior form {
+    flex: 1;
+    max-width: 320px;
+    display: flex;
+    align-items: center;
+    background-color: #333d48;   /* fundo cinza */
+    border-radius: 25px;         /* bordas arredondadas */
+    padding: 6px 14px;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.5);
+    transition: all 0.3s ease;
+}
+
+#superior form:focus-within {
+    background: #3d4652;
+    box-shadow: 0 0 6px rgba(74, 144, 226, 0.8);
+}
+
+#superior form input[type="text"] {
+    flex: 1;
+    min-width: 0;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: white;
+    font-size: 15px;
+    padding: 6px;
+}
+
+#superior form input::placeholder {
+    color: #aaa;
+    transition: opacity 0.3s ease;
+}
+
+#superior form input:focus::placeholder {
+    opacity: 0.5;
+}
+
+#superior form button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-left: auto;   /* joga o botão pro lado direito */
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease;
+}
+
+
+#superior form button:hover {
+    transform: scale(1.2);
+}
+
+#superior form button img {
+    width: 18px;
+    height: 18px;
+    display: block;
+}
+
+/* ===== DIREITA (ícones) ===== */
+#icones-direita {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex: 0 0 auto;
+}
+
+#icones-direita a img {
+    height: 32px;
+    cursor: pointer;
+    display: block;
+}
+
+/* ===== BARRA LATERAL ===== */
+#lateral {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    width: 230px;
+    height: calc(100% - 70px);
+    background: linear-gradient(to bottom, #0A1B40, #142b6f);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+#lateral a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #b0b0b0;
+    text-decoration: none;
+    padding: 12px 15px;
+    border-radius: 5px;
+    transition: background 0.2s, color 0.2s;
+}
+
+#lateral a img {
+    width: 25px;
+}
+
+#lateral a:hover {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* ===== CONTEÚDO PRINCIPAL ===== */
+#conteudo {
+    position: absolute;
+    top: 70px;
+    left: 230px;
+    right: 0;
+    bottom: 0;
+    padding: 40px 30px;
+    background-color: #2f353b;
+    overflow-y: auto;
+}
+
+#conteudo h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #fff;
+    font-weight: 500;
+}
+
+#conteudo p {
+    font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: 30px;
+    color: #d0d0d0;
+}
+
+#conteudo img {
+    max-width: 100%;
+    margin: 20px 0;
+}
+
+/* ===== BOTÕES ===== */
+#button {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+    gap: 20px;
+}
+
+#button button {
+    background-color: #4a90e2;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    flex: 1;
+    transition: background-color 0.3s ease;
+}
+
+#button button:hover {
+    background-color: #357ab7;
+}
+
+/* ===== RESPONSIVIDADE ===== */
+@media (max-width: 900px) {
+    #lateral { width: 200px; }
+    #conteudo { left: 200px; }
+    #superior form { max-width: 250px; }
+}
+
+@media (max-width: 600px) {
+    #lateral { display: none; }
+    #conteudo { left: 0; padding: 20px; }
+    #superior form { max-width: 200px; }
+}
