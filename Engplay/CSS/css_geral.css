@@ -213,6 +213,7 @@ html, body {
     justify-content: space-between;
     margin-top: 30px;
     gap: 20px;
+    flex-direction: column
 }
 
 #button button {
@@ -224,6 +225,7 @@ html, body {
     font-size: 16px;
     cursor: pointer;
     flex: 1;
+    width: 100%;
     transition: background-color 0.3s ease;
 }
 
