@@ -51,7 +51,7 @@ html, body {
 /* ===== FORMULÁRIO DE BUSCA (CENTRO) ===== */
 #superior form {
     flex: 1;
-    max-width: 320px;
+    max-width: 850px;
     display: flex;
     align-items: center;
     background-color: #333d48;
