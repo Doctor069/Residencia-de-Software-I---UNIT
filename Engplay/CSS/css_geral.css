@@ -180,6 +180,10 @@ html, body {
     padding: 40px 30px;
     background-color: #2f353b;
     overflow-y: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
     /* ADICIONADO PARA ANIMAÇÃO SUAVE */
     transition: left 0.3s ease;
 }
