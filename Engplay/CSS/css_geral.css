@@ -183,10 +183,19 @@ html, body {
     display: flex;
     justify-content: flex-start;
     gap: 40px;
-    align-items: center;
     flex-direction: column;
     /* ADICIONADO PARA ANIMAÇÃO SUAVE */
     transition: left 0.3s ease;
+}
+
+.coluna-central-de-conteudo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    width: 100%;
+    max-width: 950px;
+    margin: 0 auto;
 }
 
 #conteudo h2 {
@@ -215,8 +224,14 @@ html, body {
     margin-top: 30px;
     gap: 20px;
     flex-direction: column;
-    width: 100%;
     padding: 0;
+}
+
+#button a {
+    display: block;
+    width: 100%;
+    max-width: 650px;
+    text-align: center;
 }
 
 #button button {
@@ -324,7 +339,7 @@ body.sidebar-retraida #conteudo {
     display: flex;
     flex-direction: column;
     gap: 15px;
-    width: 100%;
+    width: auto;
     max-width: 600px;
 }
 
@@ -346,3 +361,4 @@ body.sidebar-retraida #conteudo {
     opacity: 0.6;
     cursor: not-allowed;
 }
+
