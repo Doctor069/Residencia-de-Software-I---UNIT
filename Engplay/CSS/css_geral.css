@@ -383,3 +383,47 @@ body.sidebar-retraida #conteudo {
     cursor: not-allowed;
 }
 
+.avisos ul {
+    list-style-type: none;
+    text-align: left;
+    padding: 0;
+    max-width: 800px;
+    width: 100%;
+}
+
+.avisos li {
+    display: flex;
+    margin-bottom: 20px;
+    align-items: center;
+    gap: 15px;
+}
+
+.aviso-icon{
+    flex-shrink: 0;
+}
+
+.avisos li:last-child {
+    margin-bottom: 0;
+}
+
+.confirmação {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.confirmação h2 {
+    font-weight: bold;
+    margin-bottom: 40px;
+    max-width: 750px;
+}
+
+.confirmação p {
+    max-width: 1400px;
+}
+
+.confirmação p:first-of-type {
+    margin-bottom: 250px;
+}
