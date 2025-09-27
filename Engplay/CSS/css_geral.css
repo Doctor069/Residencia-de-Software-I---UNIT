@@ -271,19 +271,6 @@ html, body {
     color: white;
     }
 
-/* ===== RESPONSIVIDADE ===== */
-@media (max-width: 900px) {
-    #lateral { width: 200px; }
-    #conteudo { left: 200px; }
-    #superior form { max-width: 250px; }
-}
-
-@media (max-width: 600px) {
-    #lateral { display: none; }
-    #conteudo { left: 0; padding: 20px; }
-    #superior form { max-width: 200px; }
-}
-
 /* ===== RETRAIR A BARRA LATERAL ===== */
 
 #lateral.retraida {
@@ -426,3 +413,79 @@ body.sidebar-retraida #conteudo {
 .confirmação p:first-of-type {
     margin-bottom: 250px;
 }
+
+/* ===== RESPONSIVIDADE ===== */
+@media (max-width: 900px) {
+    
+    #lateral {
+        width: 200px;
+    }
+    #conteudo {
+        left: 200px;
+        padding: 30px 25px;
+    }
+    #superior form {
+        max-width: 300px;
+    }
+    #cancelamento-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    #lateral {
+        display: none;
+    }
+    #conteudo {
+        left: 0;
+        padding: 25px 15px;
+    }
+    #superior {
+        padding: 0 10px;
+        gap: 10px;
+    }
+    #superior form {
+        display: flex;
+        flex: 1 1 auto;
+        min-width: 50px;
+    }
+    #superior form input[type="text"] {
+        min-width: 0;
+    }
+    #superior-left {
+        gap: 10px;
+    }
+    h2 {font-size: 24px;}
+    p, li, span { font-size: 16px; }
+    .avisos li {
+        font-size: 16px;
+        padding-left: 30px;
+        }
+        .aviso-icon {
+        width: 40px;
+        height: 40px;
+    }
+    #cancelamento-container {
+        grid-template-columns: 1fr; 
+        gap: 15px; 
+        }
+        #termos-container {
+        padding: 0 10px;
+        }
+        .confirmação h2 {
+        font-size: 22px;
+        }
+        .confirmação p {
+        font-size: 15px;
+    }
+    #button {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        }
+        #button button {
+        font-size: 15px;
+        padding: 14px; 
+        width: 100%; 
+    }
+    }
