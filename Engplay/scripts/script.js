@@ -25,8 +25,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if (blocoOpcao && checkTermos && checkPerda && btnConfirmar && linkConfirmar) {
         
-        const imgNaoMarcado = "../assets/icones para pagina 3/icon - check box --- nao marcado.png";
-        const imgMarcado = "../assets/icones para pagina 3/icon - check box --- marcado.png";
+        const imgNaoMarcado = "../assets/icons/icones para Pagina - Diagnostico/icon - check box --- nao marcado.png";
+        const imgMarcado = "../assets/icons/icones para Pagina - Diagnostico/icon - check box --- marcado.png";
 
         checkTermos.dataset.checked = 'false';
         checkPerda.dataset.checked = 'false';
