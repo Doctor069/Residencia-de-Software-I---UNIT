@@ -470,6 +470,35 @@ body.sidebar-retraida #conteudo {
     line-height: 1.6;
 }
 
+.avaliacao-curso {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 750px;
+    margin: 0 auto;
+}
+
+.avaliacao-curso h2 {
+    margin-bottom: 30px;
+    line-height: 1.4;
+}
+
+.avaliacao-texto {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+.avaliacao-texto h3 {
+    text-decoration: underline;
+    margin-bottom: 10px;
+}
+
+.avaliacao-texto p {
+    
+}
+
 /* ===== RESPONSIVIDADE ===== */
 @media (max-width: 900px) {
     
