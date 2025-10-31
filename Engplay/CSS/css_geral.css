@@ -624,3 +624,36 @@ body.sidebar-retraida #conteudo {
         width: 100%; 
     }
     }
+    /* ===== BOTÃO MODO CLARO / ESCURO ===== */
+#modo-claro-escuro {
+    background-color: #B0E0E6; /* tom claro suave */
+    color: #2b2b2b;           /* texto escuro no modo claro */
+    border: none;
+    padding: 12px 25px;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px; /* espaço entre ícone e texto */
+    transition: all 0.3s ease;
+}
+
+/* Hover para contraste */
+#modo-claro-escuro:hover {
+    background-color: #a0cfe0;
+}
+
+/* Modo escuro ativo */
+#modo-claro-escuro.dark {
+    background-color: #2f353b; /* tom escuro do seu layout */
+    color: white;              /* texto branco */
+}
+
+/* Mantém ícones brancos em ambos os modos */
+#modo-claro-escuro img {
+    filter: brightness(1); /* branco para ícones */
+    width: 20px;
+    height: 20px;
+}
