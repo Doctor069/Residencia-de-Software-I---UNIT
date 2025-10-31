@@ -83,14 +83,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
 });
 
-// Seleciona o botão
-const modoBtn = document.getElementById('modo-claro-escuro');
 
-// Função para alternar o modo
-modoBtn.addEventListener('click', () => {
-    // Alterna a classe dark no body (modo escuro)
-    document.body.classList.toggle('dark-mode');
+document.getElementById('toggle-tema').onclick = () => {
+  document.body.classList.toggle('light-mode');
+};
 
-    // Alterna a classe dark no próprio botão
-    modoBtn.classList.toggle('dark');
-});
