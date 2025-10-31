@@ -624,7 +624,8 @@ body.sidebar-retraida #conteudo {
         width: 100%; 
     }
     }
-    /* ===== BOTÃO MODO CLARO / ESCURO ===== */
+
+/* ===== BOTÃO MODO CLARO / ESCURO ===== */
 #modo-claro-escuro {
     background-color: #B0E0E6; /* tom claro suave */
     color: #2b2b2b;           /* texto escuro no modo claro */
@@ -657,3 +658,4 @@ body.sidebar-retraida #conteudo {
     width: 20px;
     height: 20px;
 }
+
