@@ -625,61 +625,61 @@ body.sidebar-retraida #conteudo {
     }
     }
 
-/* ===== MODO CLARO ===== */
+/* ===== MODO CLARO AJUSTADO ===== */
 body.light-mode {
-    background-color: #B0E0E6; /* fundo azul suave */
-    color: #2b2b2b; /* texto padrão escuro */
+    background-color: #C0E0F0; /* azul suave, mas mais escuro */
+    color: #2B2B2B; /* texto escuro */
 }
 
 /* Barra superior */
 body.light-mode #superior {
-    background: linear-gradient(to right, #d0f0f7, #99d9eb);
-    border-bottom: 2px solid #7a7979;
+    background: linear-gradient(to right, #A0D4EB, #7ABCD7);
+    border-bottom: 2px solid #7A9CA5;
 }
 
 body.light-mode #superior form {
-    background-color: white;
+    background-color: #FFFFFF;
 }
 
 body.light-mode #superior form input {
-    color: #2b2b2b;
+    color: #2B2B2B;
 }
 
 body.light-mode #superior form input::placeholder {
     color: #666666;
 }
 
-/* Ícones: mantêm brancos */
+/* Ícones */
 body.light-mode #icones-direita a img,
 body.light-mode #superior-left button img {
-    filter: none; 
-    color: white;
+    filter: none;
+    color: #2B2B2B; /* agora ícones aparecem bem */
 }
 
 /* Barra lateral */
 body.light-mode #lateral {
-    background: linear-gradient(to bottom, #d0f0f7, #99d9eb);
+    background: linear-gradient(to bottom, #A0D4EB, #7ABCD7);
 }
 
 body.light-mode #lateral a {
-    color: #2b2b2b;
+    color: #2B2B2B;
 }
 
 body.light-mode #lateral a:hover {
-    background: rgba(255, 255, 255, 0.1);
-    color: white; /* mantém branco ao passar */
+    background: rgba(255, 255, 255, 0.2);
+    color: #000000;
 }
 
 /* Conteúdo principal */
 body.light-mode #conteudo {
-    background-color: #B0E0E6;
-    color: #2b2b2b;
+    background-color: #C0E0F0;
+    color: #2B2B2B;
 }
 
 /* Blocos de opção */
 body.light-mode .opcao-bloco {
-    background-color: #e0f2f7;
-    border: 2px solid transparent;
+    background-color: #E0F2F7;
+    border: 2px solid #7ABCD7;
 }
 
 body.light-mode .opcao-bloco.selecionado {
@@ -688,24 +688,25 @@ body.light-mode .opcao-bloco.selecionado {
 
 /* Botões */
 body.light-mode #button button {
-    background-color: #ffffff; /* deixa branco */
-    color: #2b2b2b;
+    background-color: #FFFFFF;
+    color: #2B2B2B;
+    border: 1px solid #7ABCD7;
 }
 
 body.light-mode #button a:first-child button {
-    background: linear-gradient(to right, #ffffff ,#cceff6 ,#99d9eb);
-    color: #2b2b2b;
+    background: linear-gradient(to right, #FFFFFF, #A0D4EB);
+    color: #2B2B2B;
 }
 
 body.light-mode #button a:last-child button {
-    background: linear-gradient(to left, #ffffff ,#ffc0c0 ,#ff8080);
-    color: #2b2b2b;
+    background: linear-gradient(to left, #FFFFFF, #FFC0C0, #FF8080);
+    color: #2B2B2B;
 }
 
 /* Textareas e caixas de comentário */
 body.light-mode .comentario-caixa {
-    background-color: #e0f2f7;
-    color: #2b2b2b;
+    background-color: #E0F2F7;
+    color: #2B2B2B;
 }
 
 body.light-mode .comentario-caixa::placeholder {
@@ -714,22 +715,23 @@ body.light-mode .comentario-caixa::placeholder {
 
 /* Avisos e listas */
 body.light-mode .avisos li {
-    color: #2b2b2b;
+    color: #2B2B2B;
 }
 
 body.light-mode .avisos li .aviso-icon {
-    filter: none; /* ícones continuam brancos */
-}
- /* Área de destaque clara */
-.contraste-claro {
-    background-color: #B0E0E6;  /* tom suave */
-    color: #2b2b2b;              /* texto escuro para contraste */
-    border-radius: 10px;         /* opcional, deixa mais amigável */
-    padding: 15px;               /* espaçamento interno */
+    filter: none;
 }
 
-/* Se tiver botões dentro, manter ícones brancos */
+/* Área de destaque clara */
+.contraste-claro {
+    background-color: #A0D4EB;  /* azul com contraste real */
+    color: #2B2B2B;
+    border-radius: 10px;
+    padding: 15px;
+}
+
+/* Botões dentro da área de destaque */
 .contraste-claro button,
 .contraste-claro button img {
-    color: white;    /* mantém ícones/branco */
+    color: #2B2B2B;
 }
