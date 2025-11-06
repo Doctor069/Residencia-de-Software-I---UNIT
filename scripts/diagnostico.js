@@ -1,0 +1,61 @@
+document.addEventListener('DOMContentLoaded', function() {
+
+    const blocoOpcao = document.querySelector('.opcao-bloco');
+    const checkTermos = document.getElementById('termos-check');
+    const checkPerda = document.getElementById('perda-check');
+    const btnConfirmar = document.getElementById('confirmar-perdas-btn');
+    const linkConfirmar = document.getElementById('link-confirmar-perdas');
+
+    if (blocoOpcao && checkTermos && checkPerda && btnConfirmar && linkConfirmar) {
+        
+        const imgNaoMarcado = "../assets/icons/icones para Pagina - Diagnostico/icon - check box --- nao marcado.svg";
+        const imgMarcado = "../assets/icons/icones para Pagina - Diagnostico/icon - check box --- marcado.svg";
+
+        checkTermos.dataset.checked = 'false';
+        checkPerda.dataset.checked = 'false';
+
+        btnConfirmar.disabled = true;
+
+        blocoOpcao.addEventListener('click', function() {
+            blocoOpcao.classList.toggle('selecionado');
+        });
+
+        checkTermos.addEventListener('click', function() {
+            const img = checkTermos.querySelector('img');
+            const isChecked = checkTermos.dataset.checked === 'true';
+            checkTermos.dataset.checked = isChecked ? 'false' : 'true';
+
+            img.src = !isChecked ? imgMarcado : imgNaoMarcado;
+            
+            verificarEstadoBotao();
+        });
+
+        checkPerda.addEventListener('click', function() {
+            const img = checkPerda.querySelector('img');
+            const isChecked = checkPerda.dataset.checked === 'true';
+            checkPerda.dataset.checked = isChecked ? 'false' : 'true';
+            
+            img.src = !isChecked ? imgMarcado : imgNaoMarcado;
+
+            verificarEstadoBotao();
+        });
+
+        function verificarEstadoBotao() {
+            const termosMarcado = checkTermos.dataset.checked === 'true';
+            const perdaMarcado = checkPerda.dataset.checked === 'true';
+
+            if (termosMarcado && perdaMarcado) {
+                btnConfirmar.disabled = false;
+            } else {
+                btnConfirmar.disabled = true;
+            }
+        }
+        
+        linkConfirmar.addEventListener('click', function(event) {
+            if (btnConfirmar.disabled) {
+                event.preventDefault();
+            }
+        });
+    }
+
+});

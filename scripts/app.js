@@ -1,8 +1,3 @@
-/**
- * Função reutilizável para carregar HTML de um arquivo em um elemento da página.
- * @param {string} url - O caminho para o arquivo .html (ex: '/partials/header.html')
- * @param {string} elementId - O ID do elemento onde o HTML será injetado (ex: 'header-placeholder')
- */
 function loadHTML(url, elementId) {
     fetch(url)
         .then(response => {
