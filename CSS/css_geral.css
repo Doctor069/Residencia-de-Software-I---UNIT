@@ -1,737 +1,222 @@
 /* RESET BÁSICO */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
 }
 
-html, body {
-    height: 100%;
-    background-color: #2f353b;
-    color: white;
-    overflow: hidden;
-}
-
-/* ===== BARRA SUPERIOR ===== */
-#superior {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 70px;
-    background: linear-gradient(to right, #0A1B40, #142b6f);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 24px;
-    z-index: 1000;
-    gap: 20px;
-    border-bottom: 2px solid #7a7979; 
-}
-
-/* ESQUERDA (menu + logo) */
-#superior-left {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    flex: 0 0 auto;
-}
-
-#superior-left button {
-    background: none;
-    border: none;
-    cursor: pointer;
-}
-
-#superior-left img {
-    height: 40px;
-    display: block;
-}
-
-/* ===== FORMULÁRIO DE BUSCA (CENTRO) ===== */
-#superior form {
-    flex: 1;
-    max-width: 850px;
-    display: flex;
-    align-items: center;
-    background-color: #52525b;
-    border-radius: 25px;
-    padding: 6px 14px;
-    box-shadow: inset 0 2px 4px rgba(0,0,0,0.5);
-    transition: all 0.3s ease;
-}
-
-#superior form:focus-within {
-    background: #3d4652;
-    box-shadow: 0 0 6px rgba(74, 144, 226, 0.8);
-}
-
-#superior form input[type="text"] {
-    flex: 1;
-    min-width: 0;
-    background: transparent;
-    border: none;
-    outline: none;
-    color: white;
-    font-size: 15px;
-    padding: 6px;
-}
-
-#superior form input::placeholder {
-    color: #aaa;
-    transition: opacity 0.3s ease;
-}
-
-#superior form input:focus::placeholder {
-    opacity: 0.5;
-}
-
-#superior form button {
-    background: none;
-    border: none;
-    cursor: pointer;
-    margin-left: auto;
-    padding: 0;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    transition: transform 0.2s ease;
-}
-
-
-#superior form button:hover {
-    transform: scale(1.2);
-}
-
-#superior form button img {
-    width: 18px;
-    height: 18px;
-    display: block;
-}
-
-/* ===== DIREITA (ícones) ===== */
-#icones-direita {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    flex: 0 0 auto;
-}
-
-#icones-direita a img {
-    height: 32px;
-    cursor: pointer;
-    display: block;
-}
-
-/* ===== BARRA LATERAL ===== */
-#lateral {
-    position: fixed;
-    top: 70px;
-    left: 0;
-    width: 230px;
-    height: calc(100% - 70px);
-    background: linear-gradient(to bottom, #0A1B40, #142b6f);
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    overflow-y: auto;
-    /* ADICIONADO PARA ANIMAÇÃO SUAVE */
-    transition: width 0.3s ease, padding 0.3s ease;
-}
-
-#lateral a {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    color: #b0b0b0;
-    text-decoration: none;
-    padding: 12px 15px;
-    border-radius: 5px;
-    transition: background 0.2s, color 0.2s;
-    /* Impede que o texto quebre a linha durante a transição */
-    white-space: nowrap; 
-}
-
-#lateral a img {
-    width: 25px;
-}
-
-#lateral a:hover {
-    color: #fff;
-    background: rgba(255, 255, 255, 0.1);
-}
-
-/* Adicione esta regra para o texto dentro do link, para animar o desaparecimento */
-#lateral a p {
-    margin: 0;
-    transition: opacity 0.2s ease, width 0.2s ease;
-    opacity: 1;
-    width: auto;
-    overflow: hidden;
+html,
+body {
+  height: 100%;
+  background-color: #2f353b;
+  color: white;
+  overflow: hidden;
 }
 
 /* ===== CONTEÚDO PRINCIPAL ===== */
 #conteudo {
-    position: absolute;
-    top: 70px;
-    left: 230px;
-    right: 0;
-    bottom: 0;
-    padding: 40px 30px;
-    background-color: #2d2d2d;
-    overflow-y: auto;
-    display: flex;
-    justify-content: flex-start;
-    gap: 40px;
-    flex-direction: column;
-    /* ADICIONADO PARA ANIMAÇÃO SUAVE */
-    transition: left 0.3s ease;
-    text-align: center;
+  position: absolute;
+  top: 70px;
+  left: 230px;
+  right: 0;
+  bottom: 0;
+  padding: 40px 30px;
+  background-color: #2d2d2d;
+  overflow-y: auto;
+  display: flex;
+  justify-content: flex-start;
+  gap: 40px;
+  flex-direction: column;
+  /* ADICIONADO PARA ANIMAÇÃO SUAVE */
+  transition: left 0.3s ease;
+  text-align: center;
 }
 
 .coluna-central-de-conteudo {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1px;
-    width: 100%;
-    max-width: 950px;
-    margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1px;
+  width: 100%;
+  max-width: 950px;
+  margin: 0 auto;
 }
 
 .barra-de-progresso-img {
-    margin-bottom: 30px;
+  margin-bottom: 30px;
 }
 
 #conteudo h2 {
-    font-size: 28px;
-    color: #fff;
-    font-weight: 500;
-    margin-bottom: 25px;
-    font-weight: bold;
+  font-size: 28px;
+  color: #fff;
+  font-weight: 500;
+  margin-bottom: 25px;
+  font-weight: bold;
 }
 
 #conteudo p {
-    font-size: 18px;
-    line-height: 1.5;
-    color: #ffffff;
+  font-size: 18px;
+  line-height: 1.5;
+  color: #ffffff;
 }
 
 #conteudo img {
-    max-width: 100%;
+  max-width: 100%;
 }
 
 /* ===== BOTÕES ===== */
 #button {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 30px;
-    gap: 20px;
-    flex-direction: column;
-    padding: 0;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+  gap: 20px;
+  flex-direction: column;
+  padding: 0;
 }
 
 #button a {
-    display: inline-block;
-    width: auto;
-    text-decoration: none;
+  display: inline-block;
+  width: auto;
+  text-decoration: none;
 }
 
 #button button {
-    background-color: #d9d9d9;
-    border: none;
-    padding: 12px 20px;
-    border-radius: 15px;
-    color: black;
-    font-size: 16px;
-    cursor: pointer;
-    flex: 1;
-    width: 100%;
-    transition: background 0.3s ease;
-    font-weight: bold;
+  background-color: #d9d9d9;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 15px;
+  color: black;
+  font-size: 16px;
+  cursor: pointer;
+  flex: 1;
+  width: 100%;
+  transition: background 0.3s ease;
+  font-weight: bold;
 }
 
 #button a:first-child button {
-    background: linear-gradient(to right, #FFFFFF ,#FFFFFF ,#51ff51 ,#40C840);
-    background-size: 200% 100%;
-    background-position: left center;
-    transition: background-position 0.4s ease-out, color 0.4s ease-out;
+  background: linear-gradient(to right, #ffffff, #ffffff, #51ff51, #40c840);
+  background-size: 200% 100%;
+  background-position: left center;
+  transition: background-position 0.4s ease-out, color 0.4s ease-out;
 }
 
 #button a:first-child button:hover {
-    background-position: right center;
-    color:white
+  background-position: right center;
+  color: white;
 }
 #button a:last-child button {
-    background: linear-gradient(to left, #fff, #fff, #FF5151, #D73C3C);
-    background-size: 200% 100%;
-    background-position: right center;
-    transition: background-position 0.4s ease-out;
+  background: linear-gradient(to left, #fff, #fff, #ff5151, #d73c3c);
+  background-size: 200% 100%;
+  background-position: right center;
+  transition: background-position 0.4s ease-out;
 }
 
 #button a:last-child button:hover {
-    background-position: left center;
-    color: white;
-    }
+  background-position: left center;
+  color: white;
+}
 
 /* ===== RETRAIR A BARRA LATERAL ===== */
 
 #lateral.retraida {
-    width: 80px;     
-    padding: 20px 0;
+  width: 80px;
+  padding: 20px 0;
 }
 
 body.sidebar-retraida #conteudo {
-    left: 80px;
+  left: 80px;
 }
 
 #lateral.retraida a {
-    justify-content: center;
-    gap: 0;
+  justify-content: center;
+  gap: 0;
 }
 
 #lateral.retraida a p {
-    opacity: 0;        
-    width: 0;           
-    pointer-events: none; 
-}
-
-/* ===== ESTILOS PARA A PÁGINA DE CANCELAMENTO (PÁGINA 3) ===== */
-
-#cancelamento-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 25px; 
-    width: 100%;
-    max-width: 950px; 
-    margin: 40px auto; 
-}
-
-.opcao-bloco {
-    background-color: #4a4a4a; 
-    border: 2px solid transparent; 
-    border-radius: 15px;
-    padding: 20px;
-    width: 100%;
-    max-width: 3500px; 
-    cursor: pointer;
-    transition: all 0.3s ease;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-}
-
-.opcao-bloco h3 {
-    margin-bottom: 10px;
-    margin-top: 0;
-    margin-bottom: 15px;
-    font-size: 1.1em;
-    color: #fff;
-}
-
-.opcao-bloco p {
-    font-size: 0.9em;
-    color: #d0d0d0;
-    line-height: 1.5;
-    margin: 0; 
-}
-
-.opcao-bloco:hover {
-    border: 2px dashed #3A70D7;
-    transform: translateY(-5px);
-}
-
-.opcao-bloco.selecionado {
-    border: 2px solid #3A70D7;
-}
-
-#termos-container {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    width: auto;
-    max-width: 600px;
-}
-
-.custom-checkbox {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    cursor: pointer;
-    font-size: 16px;
-}
-
-.custom-checkbox img {
-    width: 24px;
-    height: 24px;
-}
-
-#confirmar-perdas-btn:disabled {
-    background-color: #555; 
-    opacity: 0.6;
-    cursor: not-allowed;
-}
-
-.avisos ul {
-    list-style-type: none;
-    text-align: left;
-    padding: 0;
-    max-width: 800px;
-    width: 100%;
-}
-
-.avisos li {
-    display: flex;
-    margin-bottom: 20px;
-    align-items: center;
-    gap: 15px;
-}
-
-.aviso-icon{
-    flex-shrink: 0;
-}
-
-.avisos li:last-child {
-    margin-bottom: 0;
-}
-
-.confirmação {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    margin-bottom: 40px;
-}
-
-.confirmação h2 {
-    font-weight: bold;
-    margin-bottom: 40px;
-    max-width: 750px;
-}
-
-.confirmação p {
-    max-width: 1400px;
-}
-
-.confirmação p:first-of-type {
-    margin-bottom: 250px;
-}
-
-/* ===== IMPACTO ==== */
-
-.lista-impacto {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    width: 100%;
-    margin: 40px 0;
-}
-
-.impacto-bloco {
-    display: flex;
-    gap: 30px;
-    border-bottom: 2px solid #7a7979;
-    padding-bottom: 20px;
-}
-
-.lista-impacto .impacto-bloco:last-child {
-    border-bottom: none;
-    padding-bottom: 0;
-}
-
-.impacto-img {
-    flex-basis: 35%;
-    flex-shrink: 0;
-}
-
-.impacto-img img {
-    width: 100%;
-    border-radius: 8px;
-    display: block;
-}
-
-.impacto-texto {
-    flex-basis: 65%;
-    text-align: left;
-}
-
-.impacto-texto h3 {
-    margin-bottom: 10px;
-    font-size: 1.5em;
-}
-
-.impacto-texto ul {
-    padding-left: 20px;
-    margin: 0;
-}
-
-.impacto-texto li {
-    line-height: 1.6;
-}
-
-.avaliacao-curso {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    max-width: 750px;
-    margin: 0 auto;
-}
-
-.avaliacao-curso h2 {
-    margin-bottom: 30px;
-    line-height: 1.4;
-}
-
-.avaliacao-texto {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    margin-bottom: 40px;
-}
-
-.avaliacao-texto h3 {
-    text-decoration: underline;
-    margin-bottom: 10px;
-}
-
-.avaliacao-texto p {
-    margin-bottom: 20px;
-}
-
-.avaliacao-estrelas {
-    display: flex;
-    gap: 15px;
-    justify-content: center;
-    position: relative;
-    top: -35px;
-}
-
-.estrela-vazia {
-    width: 42px;
-    height: 42px;
-    cursor: pointer;
-    transition: transform 0.2s ease;
-}
-
-.estrela-vazia:hover {
-    transform: scale(1.2);
-}
-
-.comentario-caixa {
-    width: 100%;
-    height: 160px;
-    background-color: #3c3c3c;
-    border: none;
-    border-radius: 20px;
-    padding: 20px;
-    font-family: 'Inter', sans-serif;
-    font-size: 20px;
-    box-sizing: border-box;
-    resize: vertical;
-    color: #e0e0e0;
-    text-align: center;
-    line-height: 120px;
-    transition: text-align 0.3s ease-in-out, line-height 0.3s ease-in-out;
-}
-
-.comentario-caixa:focus {
-    text-align: left;
-    line-height: 1.5;
-}
-
-.comentario-caixa::placeholder {
-    text-align: center;
-    color: #999;
-}
-
-.comentario-caixa:focus::placeholder {
-    color: transparent; 
+  opacity: 0;
+  width: 0;
+  pointer-events: none;
 }
 
 /* ===== RESPONSIVIDADE ===== */
 @media (max-width: 900px) {
-    
-    #lateral {
-        width: 200px;
-    }
-    #conteudo {
-        left: 200px;
-        padding: 30px 25px;
-    }
-    #superior form {
-        max-width: 300px;
-    }
-    #cancelamento-container {
-        grid-template-columns: repeat(2, 1fr);
-    }
+  #lateral {
+    width: 200px;
+  }
+  #conteudo {
+    left: 200px;
+    padding: 30px 25px;
+  }
+  #superior form {
+    max-width: 300px;
+  }
+  #cancelamento-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (max-width: 600px) {
-    #lateral {
-        display: none;
-    }
-    #conteudo {
-        left: 0;
-        padding: 25px 15px;
-    }
-    #superior {
-        padding: 0 10px;
-        gap: 10px;
-    }
-    #superior form {
-        display: flex;
-        flex: 1 1 auto;
-        min-width: 50px;
-    }
-    #superior form input[type="text"] {
-        min-width: 0;
-    }
-    #superior-left {
-        gap: 10px;
-    }
-    h2 {font-size: 24px;}
-    p, li, span { font-size: 16px; }
-    .avisos li {
-        font-size: 16px;
-        padding-left: 30px;
-        }
-        .aviso-icon {
-        width: 40px;
-        height: 40px;
-    }
-    #cancelamento-container {
-        grid-template-columns: 1fr; 
-        gap: 15px; 
-        }
-        #termos-container {
-        padding: 0 10px;
-        }
-        .confirmação h2 {
-        font-size: 22px;
-        }
-        .confirmação p {
-        font-size: 15px;
-    }
-    #button {
-        flex-direction: column;
-        align-items: center;
-        gap: 15px;
-        }
-        #button button {
-        font-size: 15px;
-        padding: 14px; 
-        width: 100%; 
-    }
-    }
-
-/* ===== MODO CLARO AJUSTADO ===== */
-body.light-mode {
-    background-color: #C0E0F0; /* azul suave, mas mais escuro */
-    color: #2B2B2B; /* texto escuro */
-}
-
-/* Barra superior */
-body.light-mode #superior {
-    background: linear-gradient(to right, #A0D4EB, #7ABCD7);
-    border-bottom: 2px solid #7A9CA5;
-}
-
-body.light-mode #superior form {
-    background-color: #FFFFFF;
-}
-
-body.light-mode #superior form input {
-    color: #2B2B2B;
-}
-
-body.light-mode #superior form input::placeholder {
-    color: #666666;
-}
-
-/* Ícones */
-body.light-mode #icones-direita a img,
-body.light-mode #superior-left button img {
-    filter: none;
-    color: #2B2B2B; /* agora ícones aparecem bem */
-}
-
-/* Barra lateral */
-body.light-mode #lateral {
-    background: linear-gradient(to bottom, #A0D4EB, #7ABCD7);
-}
-
-body.light-mode #lateral a {
-    color: #2B2B2B;
-}
-
-body.light-mode #lateral a:hover {
-    background: rgba(255, 255, 255, 0.2);
-    color: #000000;
-}
-
-/* Conteúdo principal */
-body.light-mode #conteudo {
-    background-color: #C0E0F0;
-    color: #2B2B2B;
-}
-
-/* Blocos de opção */
-body.light-mode .opcao-bloco {
-    background-color: #E0F2F7;
-    border: 2px solid #7ABCD7;
-}
-
-body.light-mode .opcao-bloco.selecionado {
-    border: 2px solid #3A70D7;
-}
-
-/* Botões */
-body.light-mode #button button {
-    background-color: #FFFFFF;
-    color: #2B2B2B;
-    border: 1px solid #7ABCD7;
-}
-
-body.light-mode #button a:first-child button {
-    background: linear-gradient(to right, #FFFFFF, #A0D4EB);
-    color: #2B2B2B;
-}
-
-body.light-mode #button a:last-child button {
-    background: linear-gradient(to left, #FFFFFF, #FFC0C0, #FF8080);
-    color: #2B2B2B;
-}
-
-/* Textareas e caixas de comentário */
-body.light-mode .comentario-caixa {
-    background-color: #E0F2F7;
-    color: #2B2B2B;
-}
-
-body.light-mode .comentario-caixa::placeholder {
-    color: #666666;
-}
-
-/* Avisos e listas */
-body.light-mode .avisos li {
-    color: #2B2B2B;
-}
-
-body.light-mode .avisos li .aviso-icon {
-    filter: none;
-}
-
-/* Área de destaque clara */
-.contraste-claro {
-    background-color: #A0D4EB;  /* azul com contraste real */
-    color: #2B2B2B;
-    border-radius: 10px;
-    padding: 15px;
-}
-
-/* Botões dentro da área de destaque */
-.contraste-claro button,
-.contraste-claro button img {
-    color: #2B2B2B;
+  #lateral {
+    display: none;
+  }
+  #conteudo {
+    left: 0;
+    padding: 25px 15px;
+  }
+  #superior {
+    padding: 0 10px;
+    gap: 10px;
+  }
+  #superior form {
+    display: flex;
+    flex: 1 1 auto;
+    min-width: 50px;
+  }
+  #superior form input[type="text"] {
+    min-width: 0;
+  }
+  #superior-left {
+    gap: 10px;
+  }
+  h2 {
+    font-size: 24px;
+  }
+  p,
+  li,
+  span {
+    font-size: 16px;
+  }
+  .avisos li {
+    font-size: 16px;
+    padding-left: 30px;
+  }
+  .aviso-icon {
+    width: 40px;
+    height: 40px;
+  }
+  #cancelamento-container {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  #termos-container {
+    padding: 0 10px;
+  }
+  .confirmação h2 {
+    font-size: 22px;
+  }
+  .confirmação p {
+    font-size: 15px;
+  }
+  #button {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+  #button button {
+    font-size: 15px;
+    padding: 14px;
+    width: 100%;
+  }
 }
