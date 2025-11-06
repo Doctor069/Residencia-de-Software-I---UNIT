@@ -118,28 +118,6 @@ body {
   color: white;
 }
 
-/* ===== RETRAIR A BARRA LATERAL ===== */
-
-#lateral.retraida {
-  width: 80px;
-  padding: 20px 0;
-}
-
-body.sidebar-retraida #conteudo {
-  left: 80px;
-}
-
-#lateral.retraida a {
-  justify-content: center;
-  gap: 0;
-}
-
-#lateral.retraida a p {
-  opacity: 0;
-  width: 0;
-  pointer-events: none;
-}
-
 /* ===== RESPONSIVIDADE ===== */
 @media (max-width: 900px) {
   #lateral {
