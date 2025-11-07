@@ -1,3 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cancelamento</title>
+
+    <link rel="stylesheet" href="../CSS/css_geral.css" />
+    <link rel="stylesheet" href="../CSS/layout.css" />
+    <link
+      rel="stylesheet"
+      href="../CSS/estilo_cada_pagina/confirmacao.css"
+    />
+
+    <script src="../scripts/script.js" defer></script>
+    <script src="../scripts/app.js" defer></script>
+  </head>
+
+  <body>
+    <div id="geral">
+      <div id="header-placeholder"></div>
+
+      <div id="sidebar-placeholder"></div>
+
+      <main id="conteudo">
+        <div class="coluna-central-de-conteudo">
+          <img
+            class="barra-de-progresso-img"
+            src="../assets/barra de preenchimento entre cada pagina/dark/pg - confirmacao.svg"
+            alt=""
+          />
+          <div class="cancelamento-agendado-texto">
+          <h2>Seu Cancelamento foi Agendado</h2>
+          <p>
+            Você ainda tem acesso total e irrestrito a todo conteúdo da EngPlay pelas próximas 72 horas, sem nenhuma cobrança adicional. Aproveite para rever uma aula ou baixar um material.
+          </p>
+          </div>
+        </div>
+          <div class="linha-separadora"></div>
+          <div class="coluna-central-de-conteudo">
+            <div class="cancelamento-feedback-texto">
+            <p>
+              Obrigado pelo seu feedback, [Nome do Aluno]. Ele é fundamental para nós. <br> 
+              Sua solicitação de cancelamento foi agendada e será efetivada em até 72 horas. <br>
+              Durante esse período, um de nossos especialistas entrará em contato para confirmar sua decisão e entender como podemos melhorar. Fique tranquilo, seu acesso a plataforma continua 100% liberado e sem custos adicionais para você aproveitar e rever qualquer conteúdo.
+            </p>
+            </div>
+            <h2>Seu Acesso a estes benefícios será encerrado</h2>
+          <ul class="lista-impacto">
+            <li class="impacto-bloco">
+              <div class="impacto-img">
+                <img
+                  src="../assets/imgs/img para Pagina - Confirmacao//img_progresso.png"
+                  alt=""
+                />
+              </div>
+              <div class="impacto-texto">
+                <h3>Arquivamento do Seu Progresso:</h3>
+                <ul>
+                  <li>
+                    Todo o seu histórico de aprendizado será permanentemente arquivado, deixando de ser visível em sua conta.
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="impacto-bloco">
+              <div class="impacto-img">
+                <img
+                  src="../assets/imgs/img para Pagina - Confirmacao/img_encerramento_comunidade.png"
+                  alt=""
+                />
+              </div>
+              <div class="impacto-texto">
+                <h3>Encerramento do Acesso à Comunidade:</h3>
+                <ul>
+                  <li>
+                    Seu contato com os especialistas e alunos no grupo VIP será interrompido.
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="impacto-bloco">
+              <div class="impacto-img">
+                <img
+                  src="../assets/imgs/img para Pagina - Confirmacao/img_encerramento_suporte.png"
+                  alt=""
+                />
+              </div>
+              <div class="impacto-texto">
+                <h3>Suporte de Especialistas Encerrado: </h3>
+                <ul>
+                  <li>
+                    O canal para tirar dúvidas com nossa equipe em até 24h será descontinuado para a sua conta.
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="impacto-bloco">
+              <div class="impacto-img">
+                <img
+                  src="../assets/imgs/img para Pagina - Confirmacao/img_encerramento_conteudos.png"
+                  alt=""
+                />
+              </div>
+              <div class="impacto-texto">
+                <h3>Fim das Atualizações de Conteúdo:</h3>
+                <ul>
+                  <li>
+                    Sua conta não será mais atualizada com novas aulas e materiais.
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="impacto-bloco">
+              <div class="impacto-img">
+                <img
+                  src="../assets/imgs/img para Pagina - Confirmacao/img_encerramento_certificados.png"
+                  alt=""
+                />
+              </div>
+              <div class="impacto-texto">
+                <h3>Perda do Direito ao Certificado:</h3>
+                <ul>
+                  <li>
+                    Você não será mais elegível para receber seu certificado, mesmo que complete todos os requisitos do curso. A chance de validar oficialmente seu aprendizado conosco será perdida.
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="impacto-bloco">
+              <div class="impacto-img">
+                <img
+                  src="../assets/imgs/img para Pagina - Confirmacao/img_encerramento_condicao_especial.png"
+                  alt=""
+                />
+              </div>
+              <div class="impacto-texto">
+                <h3>Perda da Sua Condição Especial:</h3>
+                <ul>
+                  <li>
+                    Você perderá este preço promocional para sempre. Uma futura assinatura será feita com o valor integral, sem o seu desconto atual garantido.
+                  </li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+          <div id="button">
+            <a href="./sub-paginas/home.html">
+              <button>
+                Não quero perder tudo isso. Manter minha assinatura!
+              </button>
+            </a>
+
+            <a href="./avalicao_do_curso.html" id="link-confirmar-perdas">
+              <button id="confirmar-perdas-btn">
+                Estou ciente das perdas.
+              </button>
+            </a>
+          </div>
+        </div>
+      </main>
+    </div>
+
 <div vw class="enabled">
   <div vw-access-button class="active"></div>
   <div vw-plugin-wrapper>
@@ -8,3 +171,5 @@
 <script>
   new window.VLibras.Widget('https://vlibras.gov.br/app');
 </script>
+</body>
+</html>
