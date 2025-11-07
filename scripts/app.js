@@ -7,12 +7,29 @@ function loadHTML(url, elementId) {
             return response.text();
         })
         .then(html => {
-            const element = document.getElementById(elementId);
-            if (element) {
-                element.innerHTML = html;
-            } else {
+            const targetElement = document.getElementById(elementId);
+            if (!targetElement) {
                 console.warn(`Elemento com ID '${elementId}' não encontrado.`);
+                return;
             }
+
+            const template = document.createElement('template');
+            template.innerHTML = html;
+
+            targetElement.appendChild(template.content);
+
+            const scripts = targetElement.querySelectorAll("script");
+            scripts.forEach(oldScript => {
+                const newScript = document.createElement("script");
+                
+                Array.from(oldScript.attributes).forEach(attr => {
+                    newScript.setAttribute(attr.name, attr.value);
+                });
+
+                newScript.textContent = oldScript.textContent;
+
+                oldScript.parentNode.replaceChild(newScript, oldScript);
+            });
         })
         .catch(error => {
             console.error(error);

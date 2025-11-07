@@ -1,51 +1,72 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cancelamento</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="./CSS/css_geral.css">
-    <link rel="stylesheet" href="./CSS/layout.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./CSS/css_geral.css" />
+    <link rel="stylesheet" href="./CSS/layout.css" />
 
     <script src="./scripts/script.js" defer></script>
-    <script src="/scripts/app.js" defer></script>
-</head>
+    <script src="./scripts/app.js" defer></script>
+  </head>
 
-<body>
+  <body>
     <div id="geral">
+      <div id="header-placeholder"></div>
+      <div id="sidebar-placeholder"></div>
 
-        <div id="header-placeholder"></div>
-        <div id="sidebar-placeholder"></div>
-
-        <main id="conteudo">
-            <div class="coluna-central-de-conteudo">
-                <img class="barra-de-progresso-img" src="./assets/barra de preenchimento entre cada pagina/dark/pg - decisao.svg" alt="">
-                <h2>Espere, [Nome do Aluno]! Lembre-se do seu objetivo.</h2>
-                <p>
-                    Você realmente tem certeza que vai desistir de todo o curso agora?
-                    Você deixará todo o seu progresso para trás, além de todo o suporte.
-                </p>
-                <img src="./assets/icons/icones para Pagina - Decisao/imagem - primeira pagina.png" alt="">
-                <p>
-                    Toda grande jornada tem seus desafios. Estamos aqui para ajudar você a superar os seus.
-                    Sair agora pode significar adiar um sonho que você estava tão perto de alcançar.
-                </p>
-                <div id="button">
-                    <a href="./HTML/sub-paginas/home.html">
-                        <button>Não quero perder tudo isso. Manter minha assinatura!</button>
-                    </a>
-                    <a href="/HTML/impacto.html">
-                        <button>Estou ciente das perdas.</button>
-                    </a>
-                </div>
-            </div>
-        </main>
+      <main id="conteudo">
+        <div class="coluna-central-de-conteudo">
+          <img
+            class="barra-de-progresso-img"
+            src="./assets/barra de preenchimento entre cada pagina/dark/pg - decisao.svg"
+            alt=""
+          />
+          <h2>Espere, [Nome do Aluno]! Lembre-se do seu objetivo.</h2>
+          <p>
+            Você realmente tem certeza que vai desistir de todo o curso agora?
+            Você deixará todo o seu progresso para trás, além de todo o suporte.
+          </p>
+          <img
+            src="./assets/icons/icones para Pagina - Decisao/imagem - primeira pagina.png"
+            alt=""
+          />
+          <p>
+            Toda grande jornada tem seus desafios. Estamos aqui para ajudar você
+            a superar os seus. Sair agora pode significar adiar um sonho que
+            você estava tão perto de alcançar.
+          </p>
+          <div id="button">
+            <a href="./HTML/sub-paginas/home.html">
+              <button>
+                Não quero perder tudo isso. Manter minha assinatura!
+              </button>
+            </a>
+            <a href="./HTML/impacto.html">
+              <button>Estou ciente das perdas.</button>
+            </a>
+          </div>
+        </div>
+      </main>
     </div>
-</body>
 
+    <div vw class="enabled">
+      <div vw-access-button class="active"></div>
+      <div vw-plugin-wrapper>
+        <div class="vw-plugin-top-wrapper"></div>
+      </div>
+    </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+      new window.VLibras.Widget("https://vlibras.gov.br/app");
+    </script>
+  </body>
 </html>

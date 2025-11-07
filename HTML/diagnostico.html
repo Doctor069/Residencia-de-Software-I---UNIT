@@ -6,48 +6,66 @@
     <title>Cancelamento</title>
 
     <link rel="stylesheet" href="../CSS/css_geral.css" />
-    <link rel="stylesheet" href="../CSS/layout.css">
-    <link rel="stylesheet" href="../CSS/estilo_cada_pagina/pagina_diagnostico.css">
+    <link rel="stylesheet" href="../CSS/layout.css" />
+    <link
+      rel="stylesheet"
+      href="../CSS/estilo_cada_pagina/pagina_diagnostico.css"
+    />
 
     <script src="../scripts/script.js" defer></script>
-    <script src="/scripts/app.js" defer></script>
-    <script src="/scripts/diagnostico.js" defer></script>
+    <script src="../scripts/app.js" defer></script>
+    <script src="../scripts/diagnostico.js" defer></script>
   </head>
 
   <body>
     <div id="geral">
-
       <div id="header-placeholder"></div>
       <div id="sidebar-placeholder"></div>
 
       <main id="conteudo">
         <div class="coluna-central-de-conteudo">
-          <img class="barra-de-progresso-img" src="../assets/barra de preenchimento entre cada pagina/dark/pg - diagnostico.svg" alt="">
+          <img
+            class="barra-de-progresso-img"
+            src="../assets/barra de preenchimento entre cada pagina/dark/pg - diagnostico.svg"
+            alt=""
+          />
 
           <div id="cancelamento-container">
             <div class="opcao-bloco">
               <h3>Dificuldades Financeiras:</h3>
-              <p> O valor da assinatura está pesado no meu orçamento atual.</p>
+              <p>O valor da assinatura está pesado no meu orçamento atual.</p>
             </div>
 
             <div class="opcao-bloco">
               <h3>Falta de Tempo / Problemas Pessoais:</h3>
-              <p> Não estou conseguindo encontrar tempo para estudar ou algo na minha vida pessoal está me impedindo.</p>
+              <p>
+                Não estou conseguindo encontrar tempo para estudar ou algo na
+                minha vida pessoal está me impedindo.
+              </p>
             </div>
 
             <div class="opcao-bloco">
               <h3>Conteúdo ou Metodologia:</h3>
-              <p> As aulas não estão alinhadas com o que eu esperava ou não me adaptei ao método.</p>
+              <p>
+                As aulas não estão alinhadas com o que eu esperava ou não me
+                adaptei ao método.
+              </p>
             </div>
 
             <div class="opcao-bloco">
               <h3>Falta de Suporte ou Acompanhamento:</h3>
-              <p> Senti que não tive o apoio necessário para tirar minhas dúvidas ou me manter motivado.</p>
+              <p>
+                Senti que não tive o apoio necessário para tirar minhas dúvidas
+                ou me manter motivado.
+              </p>
             </div>
 
             <div class="opcao-bloco">
               <h3>Falta de acessibilidade:</h3>
-              <p> Não consigo acompanhar o curso com facilidade como desejado, apenas pelo computador.</p>
+              <p>
+                Não consigo acompanhar o curso com facilidade como desejado,
+                apenas pelo computador.
+              </p>
             </div>
 
             <div class="opcao-bloco">
@@ -59,8 +77,9 @@
             <div class="custom-checkbox" id="termos-check">
               <img
                 src="../assets/icons/icones para Pagina - Diagnostico/icon - check box --- nao marcado.svg"
-                alt="Checkbox de termos"/>
-              
+                alt="Checkbox de termos"
+              />
+
               <span>Concordo com os <strong>TERMOS DE ACORDO</strong></span>
             </div>
             <div class="custom-checkbox" id="perda-check">
@@ -68,27 +87,39 @@
                 src="../assets/icons/icones para Pagina - Diagnostico/icon - check box --- nao marcado.svg"
                 alt="Checkbox de ciência de perda"
               />
-              <span>Estou ciente com a <strong>PERDA</strong> de acesso a
-                <strong>TODO O CONTEÚDO</strong></span>
-                </div>
+              <span
+                >Estou ciente com a <strong>PERDA</strong> de acesso a
+                <strong>TODO O CONTEÚDO</strong></span
+              >
+            </div>
 
-              <div id="button">
-                <a href="./sub-paginas/home.html">
-                  <button>
-                    Não quero perder tudo isso. Manter minha assinatura!
-                  </button>
-                </a>
+            <div id="button">
+              <a href="./sub-paginas/home.html">
+                <button>
+                  Não quero perder tudo isso. Manter minha assinatura!
+                </button>
+              </a>
 
-                <a href="/HTML/avalicao_do_curso.html" id="link-confirmar-perdas">
-                  <button id="confirmar-perdas-btn">
-                    Estou ciente das perdas.
-                  </button>
-                </a>
-
-              </div>
+              <a href="./avalicao_do_curso.html" id="link-confirmar-perdas">
+                <button id="confirmar-perdas-btn">
+                  Estou ciente das perdas.
+                </button>
+              </a>
             </div>
           </div>
+        </div>
       </main>
     </div>
+
+    <div vw class="enabled">
+      <div vw-access-button class="active"></div>
+      <div vw-plugin-wrapper>
+        <div class="vw-plugin-top-wrapper"></div>
+      </div>
+    </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+      new window.VLibras.Widget("https://vlibras.gov.br/app");
+    </script>
   </body>
 </html>
