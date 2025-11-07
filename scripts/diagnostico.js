@@ -1,12 +1,12 @@
 document.addEventListener('DOMContentLoaded', function() {
 
-    const blocoOpcao = document.querySelector('.opcao-bloco');
+    const blocosOpcoes = document.querySelectorAll('.opcao-bloco');
     const checkTermos = document.getElementById('termos-check');
     const checkPerda = document.getElementById('perda-check');
     const btnConfirmar = document.getElementById('confirmar-perdas-btn');
     const linkConfirmar = document.getElementById('link-confirmar-perdas');
 
-    if (blocoOpcao && checkTermos && checkPerda && btnConfirmar && linkConfirmar) {
+    if (blocosOpcoes.length && checkTermos && checkPerda && btnConfirmar && linkConfirmar) {
         
         const imgNaoMarcado = "../assets/icons/icones para Pagina - Diagnostico/icon - check box --- nao marcado.svg";
         const imgMarcado = "../assets/icons/icones para Pagina - Diagnostico/icon - check box --- marcado.svg";
@@ -16,8 +16,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
         btnConfirmar.disabled = true;
 
-        blocoOpcao.addEventListener('click', function() {
-            blocoOpcao.classList.toggle('selecionado');
+        blocosOpcoes.forEach(blocoOpcao => {
+            blocoOpcao.addEventListener('click', function() {
+                // Remove selecionado de todos
+                blocosOpcoes.forEach(b => b.classList.remove('selecionado'));
+
+                // Adiciona selecionado só no clicado
+                blocoOpcao.classList.add('selecionado');
+            });
         });
 
         checkTermos.addEventListener('click', function() {
@@ -44,11 +50,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const termosMarcado = checkTermos.dataset.checked === 'true';
             const perdaMarcado = checkPerda.dataset.checked === 'true';
 
-            if (termosMarcado && perdaMarcado) {
-                btnConfirmar.disabled = false;
-            } else {
-                btnConfirmar.disabled = true;
-            }
+            btnConfirmar.disabled = !(termosMarcado && perdaMarcado);
         }
         
         linkConfirmar.addEventListener('click', function(event) {
