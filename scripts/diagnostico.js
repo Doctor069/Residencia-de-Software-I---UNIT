@@ -18,11 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         blocosOpcoes.forEach(blocoOpcao => {
             blocoOpcao.addEventListener('click', function() {
-                // Remove selecionado de todos
-                blocosOpcoes.forEach(b => b.classList.remove('selecionado'));
-
-                // Adiciona selecionado só no clicado
-                blocoOpcao.classList.add('selecionado');
+                blocoOpcao.classList.toggle('selecionado');
             });
         });
 
