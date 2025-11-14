@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('click', function() {
     const botaoToggle = document.querySelector('#superior-left button');
     
     const body = document.body;
