@@ -1,4 +1,4 @@
-function loadHTML(url, elementId) {
+function loadHTML(url, elementId, callback) {
     fetch(url)
         .then(response => {
             if (!response.ok) {
@@ -15,21 +15,21 @@ function loadHTML(url, elementId) {
 
             const template = document.createElement('template');
             template.innerHTML = html;
-
             targetElement.appendChild(template.content);
 
+            // Recarregar scripts internos do HTML carregado
             const scripts = targetElement.querySelectorAll("script");
             scripts.forEach(oldScript => {
                 const newScript = document.createElement("script");
-                
                 Array.from(oldScript.attributes).forEach(attr => {
                     newScript.setAttribute(attr.name, attr.value);
                 });
-
                 newScript.textContent = oldScript.textContent;
-
                 oldScript.parentNode.replaceChild(newScript, oldScript);
             });
+
+            // 🔥 Chama o callback depois que o conteúdo for adicionado
+            if (typeof callback === "function") callback();
         })
         .catch(error => {
             console.error(error);
@@ -41,6 +41,6 @@ function loadHTML(url, elementId) {
 }
 
 document.addEventListener("DOMContentLoaded", function() {
-    loadHTML("/HTML/partials/header.html", "header-placeholder");
+    loadHTML("/HTML/partials/header.html", "header-placeholder", inicializarTema); // ✅ Chama depois de carregar o header
     loadHTML("/HTML/partials/sidebar.html", "sidebar-placeholder");
 });
