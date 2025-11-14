@@ -1,11 +1,11 @@
 body.light-mode {
-    background-color: #C0E0F0;
-    color: #2B2B2B; 
+    background-color: #F5F5F5;
+    color: #222222; 
 }
 
 body.light-mode #superior {
-    background: linear-gradient(to right, #A0D4EB, #7ABCD7);
-    border-bottom: 2px solid #7A9CA5;
+    background: #1B365F;
+    border-bottom: 2px solid #142846; 
 }
 
 body.light-mode #superior form {
@@ -13,7 +13,7 @@ body.light-mode #superior form {
 }
 
 body.light-mode #superior form input {
-    color: #2B2B2B;
+    color: #222222;
 }
 
 body.light-mode #superior form input::placeholder {
@@ -22,56 +22,62 @@ body.light-mode #superior form input::placeholder {
 
 body.light-mode #icones-direita a img,
 body.light-mode #superior-left button img {
-    filter: none;
-    color: #2B2B2B; 
+    filter: brightness(0) invert(1); 
+    color: #FFFFFF; 
 }
 
 body.light-mode #lateral {
-    background: linear-gradient(to bottom, #A0D4EB, #7ABCD7);
+    background: #1B365F;
 }
 
 body.light-mode #lateral a {
-    color: #2B2B2B;
+    color: #FFFFFF;
 }
 
 body.light-mode #lateral a:hover {
-    background: rgba(255, 255, 255, 0.2);
-    color: #000000;
+    background: rgba(255, 255, 255, 0.1);
+    color: #FFFFFF;
 }
 
 body.light-mode #conteudo {
-    background-color: #C0E0F0;
-    color: #2B2B2B;
+    background-color: #F5F5F5;
+    color: #222222;
+}
+
+body.light-mode #conteudo h2, body.light-mode #conteudo h3, body.light-mode #conteudo p {
+    color: #000;
 }
 
 body.light-mode .opcao-bloco {
-    background-color: #E0F2F7;
-    border: 2px solid #7ABCD7;
+    background-color: #FFFFFF;
+    border: 1px solid #CCCCCC;
 }
 
 body.light-mode .opcao-bloco.selecionado {
-    border: 2px solid #3A70D7;
+    border: 2px solid #1B365F;
 }
 
 body.light-mode #button button {
-    background-color: #FFFFFF;
-    color: #2B2B2B;
-    border: 1px solid #7ABCD7;
+    background-color: #272727; 
+    color: #FFFFFF;
+    border: 1px solid #272727;
+    font-weight: bold;
 }
 
 body.light-mode #button a:first-child button {
-    background: linear-gradient(to right, #FFFFFF, #A0D4EB);
-    color: #2B2B2B;
+    background-color: #007BFF;
+    color: #FFFFFF;
 }
 
 body.light-mode #button a:last-child button {
-    background: linear-gradient(to left, #FFFFFF, #FFC0C0, #FF8080);
-    color: #2B2B2B;
+    background-color: #424242; 
+    color: #FFFFFF;
+    border: 1px solid #424242;
 }
 
 body.light-mode .comentario-caixa {
-    background-color: #E0F2F7;
-    color: #2B2B2B;
+    background-color: #FFFFFF;
+    color: #222222;
 }
 
 body.light-mode .comentario-caixa::placeholder {
@@ -79,7 +85,7 @@ body.light-mode .comentario-caixa::placeholder {
 }
 
 body.light-mode .avisos li {
-    color: #2B2B2B;
+    color: #222222;
 }
 
 body.light-mode .avisos li .aviso-icon {
@@ -87,15 +93,16 @@ body.light-mode .avisos li .aviso-icon {
 }
 
 .contraste-claro {
-    background-color: #A0D4EB; 
-    color: #2B2B2B;
+    background-color: #FFFFFF; 
+    color: #222222;
+    border: 1px solid #CCCCCC;
     border-radius: 10px;
     padding: 15px;
 }
 
 .contraste-claro button,
 .contraste-claro button img {
-    color: #2B2B2B;
+    color: #222222;
 }
 
 #botao-tema {
@@ -120,4 +127,3 @@ body.light-mode #icone-tema {
   transform: rotate(180deg);
   opacity: 0.9;
 }
-
