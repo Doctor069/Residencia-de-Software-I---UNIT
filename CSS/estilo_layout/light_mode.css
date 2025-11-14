@@ -66,12 +66,12 @@ body.light-mode #button button {
 
 body.light-mode #button a:first-child button {
     background-color: #424242;
-    color: #FFFFFF;
+    color: #000;
 }
 
 body.light-mode #button a:last-child button {
     background-color: #424242; 
-    color: #FFFFFF;
+    color: #000;
     border: 1px solid #424242;
 }
 
