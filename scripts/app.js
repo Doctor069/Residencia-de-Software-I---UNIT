@@ -41,6 +41,6 @@ function loadHTML(url, elementId, callback) {
 }
 
 document.addEventListener("DOMContentLoaded", function() {
-    loadHTML("/HTML/partials/header.html", "header-placeholder", inicializarTema); // ✅ Chama depois de carregar o header
+    loadHTML("/HTML/partials/header.html", "header-placeholder"); // ✅ Chama depois de carregar o header
     loadHTML("/HTML/partials/sidebar.html", "sidebar-placeholder");
 });

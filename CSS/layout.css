@@ -191,8 +191,3 @@ body.sidebar-retraida #conteudo {
     width: 0;
     pointer-events: none;
 }
-
-/* Ícones centralizados no modo retraído */
-#lateral.retraida a img {
-    margin: 0 auto;
-}
