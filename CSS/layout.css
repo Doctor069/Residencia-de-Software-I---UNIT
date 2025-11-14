@@ -107,68 +107,92 @@
     display: block;
 }
 
-/* ===== BARRA LATERAL ===== */
+/* ============================
+   BARRA LATERAL (MELHORADA)
+   ============================ */
+
 #lateral {
     position: fixed;
     top: 70px;
     left: 0;
     width: 230px;
     height: calc(100% - 70px);
+
+    /* COR ORIGINAL */
     background: linear-gradient(to bottom, #0A1B40, #142b6f);
+
     padding: 20px;
     display: flex;
     flex-direction: column;
     overflow-y: auto;
+
+    /* Suavização melhorada */
     transition: width 0.3s ease, padding 0.3s ease;
 }
 
+/* Links da barra */
 #lateral a {
     display: flex;
     align-items: center;
     gap: 12px;
+
+    /* COR ORIGINAL */
     color: #b0b0b0;
+
     text-decoration: none;
     padding: 12px 15px;
     border-radius: 5px;
-    transition: background 0.2s, color 0.2s;
-    white-space: nowrap; 
+
+    transition: background 0.2s, color 0.2s, gap 0.3s ease;
+    white-space: nowrap;
 }
 
+/* Ícone */
 #lateral a img {
     width: 25px;
 }
 
+/* Hover com cor original */
 #lateral a:hover {
     color: #fff;
     background: rgba(255, 255, 255, 0.1);
 }
 
+/* Texto */
 #lateral a p {
     margin: 0;
-    transition: opacity 0.2s ease, width 0.2s ease;
+    transition: opacity 0.25s ease, width 0.25s ease;
     opacity: 1;
     width: auto;
     overflow: hidden;
 }
 
-/* ===== RETRAIR A BARRA LATERAL ===== */
+/* ============================
+   ESTADO RETRAÍDO
+   ============================ */
 
 #lateral.retraida {
-  width: 80px;
-  padding: 20px 0;
+    width: 80px;
+    padding: 20px 0;
 }
 
+/* Ajuste opcional de conteúdo */
 body.sidebar-retraida #conteudo {
-  left: 80px;
+    left: 80px;
 }
 
 #lateral.retraida a {
-  justify-content: center;
-  gap: 0;
+    justify-content: center;
+    gap: 0;
 }
 
 #lateral.retraida a p {
-  opacity: 0;
-  width: 0;
-  pointer-events: none;
+    opacity: 0;
+    width: 0;
+    pointer-events: none;
+}
+
+/* Ícones centralizados no modo retraído */
+#lateral.retraida a img {
+    margin: 0 auto;
 }
