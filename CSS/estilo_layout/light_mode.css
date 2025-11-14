@@ -58,14 +58,14 @@ body.light-mode .opcao-bloco.selecionado {
 }
 
 body.light-mode #button button {
-    background-color: #272727; 
+    background-color: #424242; 
     color: #FFFFFF;
-    border: 1px solid #272727;
+    border: 1px solid #424242;
     font-weight: bold;
 }
 
 body.light-mode #button a:first-child button {
-    background-color: #007BFF;
+    background-color: #424242;
     color: #FFFFFF;
 }
 
@@ -121,9 +121,4 @@ body.light-mode .avisos li .aviso-icon {
   width: 28px;
   height: 28px;
   transition: transform 0.4s ease, opacity 0.3s ease;
-}
-
-body.light-mode #icone-tema {
-  transform: rotate(180deg);
-  opacity: 0.9;
 }
