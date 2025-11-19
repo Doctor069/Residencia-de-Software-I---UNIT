@@ -5,7 +5,7 @@
     left: 0;
     right: 0;
     height: 70px;
-    background: linear-gradient(to right, #0A1B40, #142b6f);
+    background: #17336a;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -18,7 +18,7 @@
 #superior-left {
     display: flex;
     align-items: center;
-    gap: 16px;
+    gap: 42px;
     flex: 0 0 auto;
 }
 
@@ -29,7 +29,17 @@
 }
 
 #superior-left img {
-    height: 40px;
+    display: block;
+}
+
+#superior-left img.logo {
+    width: 150px;
+    display: block;
+}
+
+
+#superior-left button img.treslinhas {
+    width: 35px;
     display: block;
 }
 
@@ -97,7 +107,7 @@
 #icones-direita {
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 25px;
     flex: 0 0 auto;
 }
 
