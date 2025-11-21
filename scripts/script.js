@@ -1,5 +1,5 @@
 // --- MENU LATERAL ---
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('click', function () {
 
   // Toggle da barra lateral
   const botaoToggle = document.querySelector('#superior-left button');
@@ -47,7 +47,7 @@ function desativarTemaClaro() {
         icone.alt = "Ativar modo escuro";
         localStorage.setItem('tema', 'light');
 
-        ativarTemaClaro(); // 🔥 carrega o arquivo
+        ativarTemaClaro();
 
     } else {
 
@@ -55,7 +55,7 @@ function desativarTemaClaro() {
         icone.alt = "Ativar modo claro";
         localStorage.setItem('tema', 'dark');
 
-        desativarTemaClaro(); // ❄ remove o arquivo
+        desativarTemaClaro(); 
     }
 
   });

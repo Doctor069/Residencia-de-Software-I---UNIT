@@ -28,7 +28,6 @@ function loadHTML(url, elementId, callback) {
                 oldScript.parentNode.replaceChild(newScript, oldScript);
             });
 
-            // 🔥 Chama o callback depois que o conteúdo for adicionado
             if (typeof callback === "function") callback();
         })
         .catch(error => {
@@ -41,6 +40,6 @@ function loadHTML(url, elementId, callback) {
 }
 
 document.addEventListener("DOMContentLoaded", function() {
-    loadHTML("/HTML/partials/header.html", "header-placeholder"); // ✅ Chama depois de carregar o header
+    loadHTML("/HTML/partials/header.html", "header-placeholder");
     loadHTML("/HTML/partials/sidebar.html", "sidebar-placeholder");
 });
