@@ -171,6 +171,14 @@
     overflow: hidden;
 }
 
+#icones-temas {
+    display: flex;            
+    justify-content: center;  
+    width: 100%;              
+    margin-top: 15px;         
+    cursor: pointer;          
+}
+
 /* ============================
    ESTADO RETRAÍDO
    ============================ */
@@ -195,10 +203,10 @@ body.sidebar-retraida #conteudo {
     pointer-events: none;
 }
 
-#icones-temas {
-    display: flex;            
-    justify-content: center;  
-    width: 100%;              
-    margin-top: 15px;         
-    cursor: pointer;          
+#icone-tema {
+    transition: transform 0.3s ease, width 0.3s ease;
+}
+
+#lateral.retraida #icone-tema {
+    transform: scale(0.5);
 }
