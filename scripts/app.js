@@ -17,7 +17,6 @@ function loadHTML(url, elementId, callback) {
             template.innerHTML = html;
             targetElement.appendChild(template.content);
 
-            // Recarregar scripts internos do HTML carregado
             const scripts = targetElement.querySelectorAll("script");
             scripts.forEach(oldScript => {
                 const newScript = document.createElement("script");

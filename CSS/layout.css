@@ -128,7 +128,6 @@
     width: 230px;
     height: calc(100% - 70px);
 
-    /* COR ORIGINAL */
     background: linear-gradient(to bottom, #0A1B40, #142b6f);
 
     padding: 20px;
@@ -136,17 +135,14 @@
     flex-direction: column;
     overflow-y: auto;
 
-    /* Suavização melhorada */
     transition: width 0.3s ease, padding 0.3s ease;
 }
 
-/* Links da barra */
 #lateral a {
     display: flex;
     align-items: center;
     gap: 12px;
 
-    /* COR ORIGINAL */
     color: #b0b0b0;
 
     text-decoration: none;
@@ -157,19 +153,16 @@
     white-space: nowrap;
 }
 
-/* Ícone */
 #lateral a img {
     width: 25px;
     height: 25px;
 }
 
-/* Hover com cor original */
 #lateral a:hover {
     color: #fff;
     background: rgba(255, 255, 255, 0.1);
 }
 
-/* Texto */
 #lateral a p {
     margin: 0;
     transition: opacity 0.25s ease, width 0.25s ease;
@@ -187,7 +180,6 @@
     padding: 20px 0;
 }
 
-/* Ajuste opcional de conteúdo */
 body.sidebar-retraida #conteudo {
     left: 80px;
 }

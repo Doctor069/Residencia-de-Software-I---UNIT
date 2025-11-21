@@ -28,7 +28,6 @@ body {
   justify-content: flex-start;
   gap: 40px;
   flex-direction: column;
-  /* ADICIONADO PARA ANIMAÇÃO SUAVE */
   transition: left 0.3s ease;
   text-align: center;
 }

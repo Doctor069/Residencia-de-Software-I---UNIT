@@ -1,7 +1,5 @@
-// --- MENU LATERAL ---
 document.addEventListener('click', function () {
 
-  // Toggle da barra lateral
   const botaoToggle = document.querySelector('#superior-left button');
   const body = document.body;
   const barraLateral = document.getElementById('lateral');
@@ -27,14 +25,12 @@ function desativarTemaClaro() {
     if (link) link.remove();
 }
 
-  // 1. Aplicar tema salvo ao carregar
   const temaSalvo = localStorage.getItem('tema');
   if (temaSalvo === 'light') {
     body.classList.add('light-mode');
     ativarTemaClaro();
   }
 
-  // 2. Alternar tema ao clicar
   document.addEventListener('click', function (e) {
     const icone = e.target.closest('#lateral #icone-tema');
     if (!icone) return;
