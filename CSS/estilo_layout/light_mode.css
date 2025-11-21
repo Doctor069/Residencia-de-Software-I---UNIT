@@ -60,3 +60,28 @@ body.light-mode .comentario-caixa::placeholder {
 .contraste-claro button img {
     color: #222222;
 }
+
+/* --- Ajuste no light_mode.css (Tema Claro) --- */
+
+#botao-tema {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px; /* Novo padding para manter o mesmo tamanho de 'área de clique' */
+  transition: transform 0.3s ease;
+}
+
+#botao-tema:hover {
+  transform: scale(1.1);
+}
+
+#icone-tema {
+  width: 36px; /* Aumento para 36px aqui também */
+  height: 36px;
+  transition: transform 0.4s ease, opacity 0.3s ease;
+}
+
+body.light-mode #icone-tema {
+  transform: rotate(180deg);
+  opacity: 0.9;
+}
