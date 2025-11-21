@@ -48,14 +48,6 @@ body.light-mode .comentario-caixa::placeholder {
     color: #666666;
 }
 
-body.light-mode .avisos li {
-    color: #222222;
-}
-
-body.light-mode .avisos li .aviso-icon {
-    filter: none;
-}
-
 .contraste-claro {
     background-color: #FFFFFF; 
     color: #222222;
@@ -67,22 +59,4 @@ body.light-mode .avisos li .aviso-icon {
 .contraste-claro button,
 .contraste-claro button img {
     color: #222222;
-}
-
-#botao-tema {
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 6px;
-  transition: transform 0.3s ease;
-}
-
-#botao-tema:hover {
-  transform: scale(1.1);
-}
-
-#icone-tema {
-  width: 28px;
-  height: 28px;
-  transition: transform 0.4s ease, opacity 0.3s ease;
 }
