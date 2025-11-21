@@ -1,42 +1,6 @@
 body.light-mode {
-    background-color: #F5F5F5;
+    background-color: #D1D1D6;
     color: #222222; 
-}
-
-body.light-mode #superior {
-    background: #1B365F;
-    border-bottom: 2px solid #142846; 
-}
-
-body.light-mode #superior form {
-    background-color: #FFFFFF;
-}
-
-body.light-mode #superior form input {
-    color: #222222;
-}
-
-body.light-mode #superior form input::placeholder {
-    color: #666666;
-}
-
-body.light-mode #icones-direita a img,
-body.light-mode #superior-left button img {
-    filter: brightness(0) invert(1); 
-    color: #FFFFFF; 
-}
-
-body.light-mode #lateral {
-    background: #1B365F;
-}
-
-body.light-mode #lateral a {
-    color: #FFFFFF;
-}
-
-body.light-mode #lateral a:hover {
-    background: rgba(255, 255, 255, 0.1);
-    color: #FFFFFF;
 }
 
 body.light-mode #conteudo {
