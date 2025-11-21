@@ -4,7 +4,7 @@ body.light-mode {
 }
 
 body.light-mode #conteudo {
-    background-color: #F5F5F5;
+    background-color: #D1D1D6;
     color: #222222;
 }
 
@@ -29,23 +29,36 @@ body.light-mode #button button {
 }
 
 body.light-mode #button a:first-child button {
-    background-color: #424242;
-    color: #000;
+    color: #fff;
+    background: linear-gradient(to right, #4da25d, #2a3c2e, #2C2C2E, #2C2C2E);
+    background-size: 200% 100%;
+    background-position: left center;
+    transition: background-position 0.4s ease-out, color 0.4s ease-out;
+}
+
+body.light-mode #button a:first-child button:hover {
+  background-position: right center;
 }
 
 body.light-mode #button a:last-child button {
-    background-color: #424242; 
-    color: #000;
-    border: 1px solid #424242;
+    color: #fff;
+    background: linear-gradient(to left, #ac4044, #3d2f30, #2C2C2E, #2C2C2E);
+    background-size: 200% 100%;
+    background-position: right center;
+    transition: background-position 0.4s ease-out, color 0.4s ease-out;
+}
+
+body.light-mode #button a:last-child button:hover {
+  background-position: left center;
 }
 
 body.light-mode .comentario-caixa {
-    background-color: #FFFFFF;
+    background-color: #666667;
     color: #222222;
 }
 
 body.light-mode .comentario-caixa::placeholder {
-    color: #666666;
+    color: #b1b1b2;
 }
 
 .contraste-claro {
