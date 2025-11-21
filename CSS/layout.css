@@ -121,20 +121,26 @@
    BARRA LATERAL (MELHORADA)
    ============================ */
 
+/* ============================
+   BARRA LATERAL (OTIMIZADA)
+   ============================ */
+
 #lateral {
     position: fixed;
     top: 70px;
     left: 0;
-    width: 230px;
+    
+    width: 190px; 
+    
     height: calc(100% - 70px);
-
     background: linear-gradient(to bottom, #0A1B40, #142b6f);
 
-    padding: 20px;
+    padding: 20px 10px; 
+    
     display: flex;
     flex-direction: column;
     overflow-y: auto;
-
+    overflow-x: hidden; 
     transition: width 0.3s ease, padding 0.3s ease;
 }
 
@@ -142,13 +148,12 @@
     display: flex;
     align-items: center;
     gap: 12px;
-
     color: #b0b0b0;
-
     text-decoration: none;
-    padding: 12px 15px;
-    border-radius: 5px;
 
+    padding: 12px 10px; 
+    
+    border-radius: 5px;
     transition: background 0.2s, color 0.2s, gap 0.3s ease;
     white-space: nowrap;
 }
@@ -156,11 +161,7 @@
 #lateral a img {
     width: 25px;
     height: 25px;
-}
-
-#lateral a:hover {
-    color: #fff;
-    background: rgba(255, 255, 255, 0.1);
+    flex-shrink: 0; 
 }
 
 #lateral a p {
@@ -168,7 +169,15 @@
     transition: opacity 0.25s ease, width 0.25s ease;
     opacity: 1;
     width: auto;
+    
+    font-size: 14px; 
     overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#lateral a:hover {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.1);
 }
 
 #icones-temas {
