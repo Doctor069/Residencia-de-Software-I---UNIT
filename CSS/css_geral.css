@@ -117,85 +117,170 @@ body {
   color: white;
 }
 
-/* ===== RESPONSIVIDADE ===== */
-@media (max-width: 900px) {
-  #lateral {
-    width: 200px;
-  }
-  #conteudo {
-    left: 200px;
-    padding: 30px 25px;
-  }
-  #superior form {
-    max-width: 300px;
-  }
-  #cancelamento-container {
-    grid-template-columns: repeat(2, 1fr);
-  }
+/* RESPONSIVIDADE */
+
+@media (max-width: 768px) {
+
+    #superior {
+        height: 70px; 
+        padding: 0 5px;
+        gap: 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    #lateral, body.sidebar-retraida::before {
+        top: 70px; 
+        height: calc(100% - 70px);
+    }
+    
+    #superior-left img.logo {
+        display: none !important;
+    }
+
+    #superior-left {
+        gap: 0 !important; 
+        margin: 0 !important;
+        padding: 0 !important;
+        flex: 0 0 auto !important; 
+        padding-right: 5px !important; 
+    }
+    
+    #superior-left button {
+        padding: 0;
+        margin: 0;
+        display: flex;
+    }
+
+    #superior form {
+        display: flex !important;
+        align-items: center;
+        background-color: #52525b !important;
+        padding: 0 8px !important; 
+        border-radius: 20px;
+        height: 40px;
+        margin: 0 !important;
+        flex: 1 !important; 
+        width: auto !important;
+        max-width: none !important;
+    }
+
+    #superior form input[type="text"] {
+        display: block !important;
+        width: 100% !important;
+        font-size: 13px !important; 
+        letter-spacing: -0.3px; 
+        background: transparent;
+        border: none;
+        outline: none;
+        color: white;
+        padding: 0;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    
+    #superior form button {
+        transform: none !important;
+        padding: 0 0 0 5px;
+        margin: 0;
+        background: none;
+        border: none;
+        display: flex;
+        align-items: center;
+        flex-shrink: 0; 
+    }
+    #superior form button img {
+        width: 16px; height: 16px;
+    }
+    
+    #icones-direita a img {
+        height: 24px;
+    }
+
+    #lateral {
+        display: flex !important;
+        position: fixed;
+        left: -100% !important; 
+        width: 240px !important;
+        z-index: 2000;
+        padding: 20px 10px !important;
+        background: linear-gradient(to bottom, #0A1B40, #142b6f);
+        transition: left 0.3s ease;
+        box-shadow: 4px 0 15px rgba(0,0,0,0.5);
+    }
+
+    #lateral.retraida {
+        left: 0 !important; 
+        width: 240px !important;
+    }
+
+    #lateral.retraida a { justify-content: flex-start !important; gap: 12px !important; padding: 12px 15px !important; }
+    #lateral.retraida a p { opacity: 1 !important; width: auto !important; display: block !important; font-size: 16px; }
+    #lateral a img { display: block !important; }
+    #lateral:not(.retraida) #icones-temas { display: none; }
+    #lateral.retraida #icones-temas { display: flex; margin-top: 20px; }
+    #lateral.retraida #icone-tema { transform: scale(1) !important; }
+    
+    body.sidebar-retraida::before {
+        content: ''; position: fixed; top: 70px; left: 0; right: 0; bottom: 0;
+        background: rgba(0,0,0,0.6); z-index: 1999;
+    }
+
+    
+    #conteudo {
+        top: 70px; 
+        left: 0 !important;
+        width: 100% !important;
+        
+        padding: 25px 15px; 
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    p, li, span {
+        font-size: 16px;
+    }
+
+    .avisos li {
+        font-size: 16px;
+        padding-left: 30px;
+    }
+
+    .aviso-icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    #cancelamento-container {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    #termos-container {
+        padding: 0 10px;
+    }
+
+    .confirmação h2 {
+        font-size: 22px;
+    }
+
+    .confirmação p {
+        font-size: 15px;
+    }
+
+    #button {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    #button button {
+        font-size: 15px;
+        padding: 14px;
+        width: 100%;
+    }
 }
-
-@media (max-width: 600px) {
-  #lateral {
-    display: none;
-  }
-  #conteudo {
-    left: 0;
-    padding: 25px 15px;
-  }
-  #superior {
-    padding: 0 10px;
-    gap: 10px;
-  }
-  #superior form {
-    display: flex;
-    flex: 1 1 auto;
-    min-width: 50px;
-  }
-  #superior form input[type="text"] {
-    min-width: 0;
-  }
-  #superior-left {
-    gap: 10px;
-  }
-  h2 {
-    font-size: 24px;
-  }
-  p,
-  li,
-  span {
-    font-size: 16px;
-  }
-  .avisos li {
-    font-size: 16px;
-    padding-left: 30px;
-  }
-  .aviso-icon {
-    width: 40px;
-    height: 40px;
-  }
-  #cancelamento-container {
-    grid-template-columns: 1fr;
-    gap: 15px;
-  }
-  #termos-container {
-    padding: 0 10px;
-  }
-  .confirmação h2 {
-    font-size: 22px;
-  }
-  .confirmação p {
-    font-size: 15px;
-  }
-  #button {
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-  }
-  #button button {
-    font-size: 15px;
-    padding: 14px;
-    width: 100%;
-  }
-}
-
-
