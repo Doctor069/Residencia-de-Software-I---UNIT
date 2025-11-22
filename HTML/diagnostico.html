@@ -13,14 +13,167 @@
     />
 
     <script src="../scripts/script.js" defer></script>
-    <script src="../scripts/app.js" defer></script>
+    <!--  <script src="./scripts/app.js" defer></script> -->
     <script type="module" src="../scripts/diagnostico.js"></script>
   </head>
 
   <body>
     <div id="geral">
-      <div id="header-placeholder"></div>
-      <div id="sidebar-placeholder"></div>
+      <header id="superior">
+        <div id="superior-left">
+          <button>
+            <img
+              class="treslinhas"
+              src="../assets/icons/barra superior/icon - tres linhas.svg"
+              alt="Abrir menu lateral"
+            />
+          </button>
+          <a href="../index.html">
+            <img
+              class="logo"
+              src="../assets/logo - engplay.png"
+              alt="Logo EngPlay - Ir para Início"
+            />
+          </a>
+        </div>
+
+        <form action="/buscar" method="GET">
+          <input
+            type="text"
+            name="pesquisa"
+            placeholder="Digite sua pesquisa..."
+          />
+          <button type="submit">
+            <img
+              src="../assets/icons/barra superior/icon - pesquisa.svg"
+              alt="Pesquisar"
+            />
+          </button>
+        </form>
+
+        <div id="icones-direita">
+          <a href="#">
+            <img
+              src="../assets/icons/barra superior/icon - notificacoes.svg"
+              alt="Notificações"
+              id="botao-tema"
+            />
+          </a>
+          <a href="#">
+            <img
+              src="../assets/icons/barra superior/icon - conta.svg"
+              alt="Minha Conta"
+            />
+          </a>
+        </div>
+      </header>
+
+      <nav id="lateral">
+        <a href="../../index.html">
+          <img
+            src="../assets/icons/barra lateral/icon - home.svg"
+            alt="barra lateral - home"
+            class="oculto"
+          />
+          <p>Home</p>
+        </a>
+        <a>
+          <img
+            src="../assets/icons/barra lateral/icon - turmas.svg"
+            alt="barra lateral - turmas"
+            class="oculto"
+          />
+          <p>Turmas</p>
+        </a>
+        <a>
+          <img
+            src="../assets/icons/barra lateral/icon - certificados.svg"
+            alt="barra lateral - certificados"
+            class="oculto"
+          />
+          <p>Certificações</p>
+        </a>
+        <a>
+          <img
+            src="../assets/icons/barra lateral/icon - banners.svg"
+            alt="barra lateral - banners"
+            class="oculto"
+          />
+          <p>Banners</p>
+        </a>
+        <a>
+          <img
+            src="../assets/icons/barra lateral/icon - assinaturas.svg"
+            alt="barra lateral - assinaturas"
+            class="oculto"
+          />
+          <p>Assinaturas</p>
+        </a>
+        <a>
+          <img
+            src="../assets/icons/barra lateral/icon - convites.svg"
+            alt="barra lateral - convites"
+            class="oculto"
+          />
+          <p>Convites</p>
+        </a>
+        <a>
+          <img
+            src="../assets/icons/barra lateral/icon - membros.svg"
+            alt="barra lateral - membros"
+            class="oculto"
+          />
+          <p>Membros</p>
+        </a>
+        <a>
+          <img
+            src="../assets/icons/barra lateral/icon - comentarios.svg"
+            alt="barra lateral - comentarios"
+            class="oculto"
+          />
+          <p>Comentarios</p>
+        </a>
+        <a>
+          <img
+            src="../assets/icons/barra lateral/icon - comunidade.svg"
+            alt="barra lateral - comunidade"
+            class="oculto"
+          />
+          <p>Comunidade</p>
+        </a>
+        <a>
+          <img
+            src="../assets/icons/barra lateral/icon - ranking.svg"
+            alt="barra lateral - ranking"
+            class="oculto"
+          />
+          <p>Ranking</p>
+        </a>
+        <a>
+          <img
+            src="../assets/icons/barra lateral/icon - atendimento.svg"
+            alt="barra lateral - atendimento"
+            class="oculto"
+          />
+          <p>Atendimento</p>
+        </a>
+        <hr />
+        <a>
+          <img
+            src="../assets/icons/barra lateral/icon - cancelamento.svg"
+            alt="barra lateral - cancelamento"
+            class="oculto"
+          />
+          <p>Cancelamento</p>
+        </a>
+        <div id="icones-temas">
+          <img
+            id="icone-tema"
+            src="../assets/icons/barra superior/temas/tema_escuro.svg"
+            alt="Tema"
+          />
+        </div>
+      </nav>
 
       <main id="conteudo">
         <div class="coluna-central-de-conteudo">
@@ -29,7 +182,10 @@
             src="../assets/barra de preenchimento entre cada pagina/dark/pg - diagnostico.svg"
             alt="Barra de progresso 4/5"
           />
-          <h2>Selecione a(s) Opção(ões) que Melhor Representa o Motivo do seu Cancelamento</h2>
+          <h2>
+            Selecione a(s) Opção(ões) que Melhor Representa o Motivo do seu
+            Cancelamento
+          </h2>
           <div id="cancelamento-container">
             <div class="opcao-bloco">
               <h3>Dificuldades Financeiras:</h3>

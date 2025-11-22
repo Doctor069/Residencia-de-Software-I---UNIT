@@ -45,9 +45,7 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
-
-    // SALVANDO DOS DADOS
-    const btnAvancar = document.querySelector('a[href="./diagnostico.html"]'); // Seleciona o link do botão
+    const btnAvancar = document.querySelector('a[href="./diagnostico.html"]');
 
 if (btnAvancar) {
     btnAvancar.addEventListener('click', function(event) {

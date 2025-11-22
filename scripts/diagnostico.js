@@ -1,7 +1,6 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
 import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
-// --- SUAS CONFIGURAÇÕES DO FIREBASE (PEGUE NO CONSOLE DO FIREBASE) ---
 const firebaseConfig = {
   apiKey: "AIzaSyAWWGRp20dDA2sAnMfurfeBAnNutIWd5NM",
   authDomain: "engplay-cancelamento.firebaseapp.com",
@@ -66,7 +65,6 @@ document.addEventListener('DOMContentLoaded', function() {
             
             localStorage.removeItem('dados_engplay_avaliacao');
 
-            // Agora sim, vai para a página de confirmação final
             window.location.href = "./confirmacao.html"; 
 
         } catch (e) {
