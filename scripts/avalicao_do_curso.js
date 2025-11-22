@@ -45,4 +45,37 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
+
+    // SALVANDO DOS DADOS
+    const btnAvancar = document.querySelector('a[href="./diagnostico.html"]'); // Seleciona o link do botão
+
+if (btnAvancar) {
+    btnAvancar.addEventListener('click', function(event) {
+        event.preventDefault(); 
+
+        const avaliacoes = [];
+        const grupos = document.querySelectorAll(".avaliacao-estrelas");
+        
+        const categorias = ["Conteúdo", "Didática", "Usabilidade"];
+
+        grupos.forEach((grupo, index) => {
+            let nota = parseInt(grupo.dataset.rating) + 1;
+            avaliacoes.push({
+                categoria: categorias[index],
+                nota: nota
+            });
+        });
+
+        const comentario = document.querySelector(".comentario-caixa").value;
+
+        const dadosAvaliacao = {
+            notas: avaliacoes, 
+            comentario: comentario
+        };
+
+        localStorage.setItem('dados_engplay_avaliacao', JSON.stringify(dadosAvaliacao));
+
+        window.location.href = "./diagnostico.html";
+    });
+}
 });

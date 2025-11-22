@@ -1,3 +1,81 @@
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+
+// --- SUAS CONFIGURAÇÕES DO FIREBASE (PEGUE NO CONSOLE DO FIREBASE) ---
+const firebaseConfig = {
+  apiKey: "AIzaSyAWWGRp20dDA2sAnMfurfeBAnNutIWd5NM",
+  authDomain: "engplay-cancelamento.firebaseapp.com",
+  projectId: "engplay-cancelamento",
+  storageBucket: "engplay-cancelamento.firebasestorage.app",
+  messagingSenderId: "572790546606",
+  appId: "1:572790546606:web:c54f85dbd4a8b1875e4d3f"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
+document.addEventListener('DOMContentLoaded', function() {
+
+    const btnConfirmar = document.getElementById('confirmar-perdas-btn');
+    const linkConfirmar = document.getElementById('link-confirmar-perdas');
+
+    linkConfirmar.addEventListener('click', async function(event) {
+        event.preventDefault(); 
+
+        if (btnConfirmar.disabled) return;
+
+        const motivosSelecionados = [];
+        document.querySelectorAll('.opcao-bloco.selecionado').forEach(bloco => {
+            const titulo = bloco.querySelector('h3').innerText.replace(":", ""); 
+            motivosSelecionados.push(titulo);
+        });
+
+        
+        const dadosSalvosAnteriores = localStorage.getItem('dados_engplay_avaliacao');
+        const dadosAvaliacao = dadosSalvosAnteriores ? JSON.parse(dadosSalvosAnteriores) : { notas: [], comentario: "" };
+
+        const dadosAluno = {
+            nome: "João da Silva", 
+            email: "joao.aluno@email.com",
+            dataCancelamento: new Date().toISOString(), 
+            dataLegivel: new Date().toLocaleString('pt-BR') 
+        };
+
+        const pacoteFinal = {
+            aluno: {
+                nome: dadosAluno.nome,
+                email: dadosAluno.email
+            },
+            feedback: {
+                estrelas: dadosAvaliacao.notas, 
+                comentario: dadosAvaliacao.comentario
+            },
+            motivosCancelamento: motivosSelecionados,
+            metadata: {
+                canceladoEm: dadosAluno.dataCancelamento,
+                displayData: dadosAluno.dataLegivel
+            }
+        };
+
+        console.log("Enviando para o banco...", pacoteFinal);
+
+        try {
+            const docRef = await addDoc(collection(db, "cancelamentos"), pacoteFinal);
+            
+            console.log("Documento salvo com ID: ", docRef.id);
+            
+            localStorage.removeItem('dados_engplay_avaliacao');
+
+            // Agora sim, vai para a página de confirmação final
+            window.location.href = "./confirmacao.html"; 
+
+        } catch (e) {
+            console.error("Erro ao adicionar documento: ", e);
+            alert("Erro ao processar cancelamento. Tente novamente.");
+        }
+    });
+});
+
 document.addEventListener('DOMContentLoaded', function() {
 
     const blocosOpcoes = document.querySelectorAll('.opcao-bloco');
