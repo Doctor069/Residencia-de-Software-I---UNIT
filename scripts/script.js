@@ -14,7 +14,7 @@ document.addEventListener('click', function () {
 function ativarTemaClaro() {
     const link = document.createElement('link');
     link.rel = "stylesheet";
-    link.href = "/CSS/estilo_layout/light_mode.css";
+    link.href = "../CSS/estilo_layout/light_mode.css";
     link.id = "tema-claro-css";
 
     document.head.appendChild(link);
@@ -39,7 +39,7 @@ function desativarTemaClaro() {
 
     if (body.classList.contains('light-mode')) {
 
-        icone.src = "/assets/icons/barra superior/temas/tema_escuro.svg";
+        icone.src = "../assets/icons/barra superior/temas/tema_escuro.svg";
         icone.alt = "Ativar modo escuro";
         localStorage.setItem('tema', 'light');
 
@@ -47,7 +47,7 @@ function desativarTemaClaro() {
 
     } else {
 
-        icone.src = "/assets/icons/barra superior/temas/tema_claro.svg";
+        icone.src = "../assets/icons/barra superior/temas/tema_claro.svg";
         icone.alt = "Ativar modo claro";
         localStorage.setItem('tema', 'dark');
 
