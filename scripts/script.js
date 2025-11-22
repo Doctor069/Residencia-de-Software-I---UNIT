@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', function () {
-
     function getPathPrefix() {
         return window.location.pathname.includes('/HTML/') ? '..' : '.';
     }
@@ -7,10 +6,23 @@ document.addEventListener('DOMContentLoaded', function () {
     const body = document.body;
     const barraLateral = document.getElementById('lateral');
 
+    if (!barraLateral) {
+        console.error("ERRO CRÍTICO: O elemento <nav id='lateral'> não foi encontrado. Verifique se você copiou o HTML da sidebar para esta página.");
+    } else {
+        console.log("Sidebar encontrada com sucesso.");
+    }
+
     const sidebarSalva = localStorage.getItem('sidebarStatus');
-    if (sidebarSalva === 'retraida' && barraLateral) {
+    
+    if (barraLateral && sidebarSalva === 'retraida') {
+        barraLateral.style.transition = 'none'; 
+        
         barraLateral.classList.add('retraida');
         body.classList.add('sidebar-retraida');
+
+        setTimeout(() => {
+            barraLateral.style.transition = ''; 
+        }, 100);
     }
 
     const temaSalvo = localStorage.getItem('tema');
@@ -33,6 +45,7 @@ document.addEventListener('DOMContentLoaded', function () {
     function atualizarIconeVisualmente(isLightMode) {
         const icone = document.querySelector('#lateral #icone-tema');
         if (!icone) return;
+
         const prefix = getPathPrefix();
         
         if (isLightMode) {
@@ -44,11 +57,12 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    atualizarIconeVisualmente(temaSalvo === 'light');
     if (temaSalvo === 'light') {
         body.classList.add('light-mode');
         ativarTemaClaro();
     }
+    atualizarIconeVisualmente(temaSalvo === 'light');
+
 
     document.addEventListener('click', function (e) {
         
@@ -64,7 +78,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         }
 
-        const btnTema = e.target.closest('#lateral #icone-tema');
+        const btnTema = e.target.closest('#lateral #icone-tema') || e.target.closest('#icones-temas');
         if (btnTema) {
             e.preventDefault();
             body.classList.toggle('light-mode');
@@ -81,6 +95,4 @@ document.addEventListener('DOMContentLoaded', function () {
             atualizarIconeVisualmente(isLightMode);
         }
     });
-
-    console.log("Sistema inicializado: Tema e Sidebar persistentes.");
 });
