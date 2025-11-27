@@ -1,3 +1,7 @@
+/* =========================================
+   VARIÁVEIS GERAIS DO MODO CLARO
+   ========================================= */
+
 body.light-mode {
     background-color: #D1D1D6;
     color: #222222; 
@@ -8,58 +12,93 @@ body.light-mode #conteudo {
     color: #222222;
 }
 
-body.light-mode #conteudo h2, body.light-mode #conteudo h3, body.light-mode #conteudo p {
+body.light-mode #conteudo h2, 
+body.light-mode #conteudo p {
     color: #000;
 }
 
+/* =========================================
+   BLOCOS DE OPÇÃO (DIAGNÓSTICO)
+   ========================================= */
+
 body.light-mode .opcao-bloco {
-    background-color: #FFFFFF;
-    border: 1px solid #CCCCCC;
+    background-color: #5A5A5A;
+    border: 2px solid transparent; 
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); 
+}
+
+body.light-mode .opcao-bloco h3,
+body.light-mode .opcao-bloco p {
+    color: #FFFFFF !important;
+}
+
+body.light-mode .opcao-bloco:hover {
+    background-color: #666666; 
+    border: 2px dashed #3A70D7; 
+    transform: translateY(-5px); 
+    box-shadow: 0 8px 15px rgba(0,0,0,0.2); 
 }
 
 body.light-mode .opcao-bloco.selecionado {
-    border: 2px solid #1B365F;
+    background-color: #5A5A5A;
+    border: 2px solid #3A70D7;
+    box-shadow: 0 0 0 4px rgba(58, 112, 215, 0.2); 
+    transform: translateY(-2px);
 }
 
-body.light-mode #button button {
-    background-color: #424242; 
-    color: #FFFFFF;
-    border: 1px solid #424242;
-    font-weight: bold;
+/* =========================================
+   CHECKBOXES (ÍCONES)
+   ========================================= */
+
+body.light-mode .custom-checkbox img {
+    filter: invert(1) brightness(0); 
 }
 
-body.light-mode #button a:first-child button {
-    color: #fff;
-    background: linear-gradient(to right, #4da25d, #2a3c2e, #2C2C2E, #2C2C2E);
-    background-size: 200% 100%;
-    background-position: left center;
-    transition: background-position 0.4s ease-out, color 0.4s ease-out;
-}
+/* =========================================
+   BOTÕES (PADRONIZADO)
+   ========================================= */
 
-body.light-mode #button a:first-child button:hover {
-  background-position: right center;
-}
-
+body.light-mode #button button,
+body.light-mode #button a:first-child button,
 body.light-mode #button a:last-child button {
-    color: #fff;
-    background: linear-gradient(to left, #ac4044, #3d2f30, #2C2C2E, #2C2C2E);
-    background-size: 200% 100%;
-    background-position: right center;
-    transition: background-position 0.4s ease-out, color 0.4s ease-out;
+    background: #2C2C2E;       
+    color: #FFFFFF;            
+    border: none;              
+    background-image: none;    
 }
 
+body.light-mode #button button:hover,
+body.light-mode #button a:first-child button:hover,
 body.light-mode #button a:last-child button:hover {
-  background-position: left center;
+    background: #454548;       
+    transform: scale(1.02);    
+    cursor: pointer;
 }
+
+/* =========================================
+   INPUTS E CAIXAS DE TEXTO (CORRIGIDO)
+   ========================================= */
 
 body.light-mode .comentario-caixa {
-    background-color: #666667;
-    color: #222222;
+    background-color: #5A5A5A; 
+    color: #FFFFFF;           
+    border: none;             
+    
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.2); 
 }
 
 body.light-mode .comentario-caixa::placeholder {
-    color: #b1b1b2;
+    color: #CCCCCC; 
 }
+
+body.light-mode .comentario-caixa:focus::placeholder {
+    color: transparent;
+}
+
+
+/* =========================================
+   UTILITÁRIOS
+   ========================================= */
 
 .contraste-claro {
     background-color: #FFFFFF; 
