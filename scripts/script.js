@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
+
     function getPathPrefix() {
         return window.location.pathname.includes('/HTML/') ? '..' : '.';
     }
@@ -7,19 +8,15 @@ document.addEventListener('DOMContentLoaded', function () {
     const barraLateral = document.getElementById('lateral');
 
     if (!barraLateral) {
-        console.error("ERRO CRÍTICO: O elemento <nav id='lateral'> não foi encontrado. Verifique se você copiou o HTML da sidebar para esta página.");
-    } else {
-        console.log("Sidebar encontrada com sucesso.");
+        console.error("ERRO CRÍTICO: O elemento <nav id='lateral'> não foi encontrado.");
     }
 
     const sidebarSalva = localStorage.getItem('sidebarStatus');
     
     if (barraLateral && sidebarSalva === 'retraida') {
         barraLateral.style.transition = 'none'; 
-        
         barraLateral.classList.add('retraida');
         body.classList.add('sidebar-retraida');
-
         setTimeout(() => {
             barraLateral.style.transition = ''; 
         }, 100);
@@ -57,11 +54,31 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
+    function atualizarBarraDeProgresso(isLightMode) {
+        const barraImg = document.querySelector('.barra-de-progresso-img');
+        
+        if (!barraImg) return;
+
+        let currentSrc = barraImg.getAttribute('src');
+
+        if (isLightMode) {
+            if (currentSrc.includes('/dark/')) {
+                barraImg.setAttribute('src', currentSrc.replace('/dark/', '/light/'));
+            }
+        } else {
+            if (currentSrc.includes('/light/')) {
+                barraImg.setAttribute('src', currentSrc.replace('/light/', '/dark/'));
+            }
+        }
+    }
+
     if (temaSalvo === 'light') {
         body.classList.add('light-mode');
         ativarTemaClaro();
     }
+    
     atualizarIconeVisualmente(temaSalvo === 'light');
+    atualizarBarraDeProgresso(temaSalvo === 'light');
 
 
     document.addEventListener('click', function (e) {
@@ -92,7 +109,11 @@ document.addEventListener('DOMContentLoaded', function () {
                 localStorage.setItem('tema', 'dark');
                 desativarTemaClaro(); 
             }
+            
             atualizarIconeVisualmente(isLightMode);
+            atualizarBarraDeProgresso(isLightMode);
         }
     });
+
+    console.log("Script carregado. Tema e Assets sincronizados.");
 });
