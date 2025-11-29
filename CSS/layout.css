@@ -219,3 +219,93 @@ body.sidebar-retraida #conteudo {
 body.light-mode .custom-checkbox[data-checked="true"] img {
     filter: invert(63%) sepia(61%) saturate(452%) hue-rotate(84deg) brightness(90%) contrast(88%);
 }
+
+/* ============================
+   ESTILO DO BOTÃO MODO LEITURA
+   ============================ */
+
+#modo-leitura-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;               
+    padding: 12px 10px;     
+    cursor: pointer;
+    color: #b0b0b0;          
+    border-radius: 5px;
+    margin-top: 10px;
+    transition: background 0.2s, color 0.2s;
+}
+
+#modo-leitura-container:hover {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.1); 
+}
+
+#modo-leitura-container img {
+    width: 25px;             
+    height: 25px;
+    flex-shrink: 0;
+    transition: transform 0.3s;
+}
+
+#modo-leitura-container p {
+    margin: 0;
+    font-size: 14px;
+    white-space: nowrap;
+    opacity: 1;
+    transition: opacity 0.25s ease, width 0.25s ease;
+}
+
+
+#lateral.retraida #modo-leitura-container p {
+    opacity: 0;
+    width: 0;
+    pointer-events: none;
+}
+
+#lateral.retraida #modo-leitura-container {
+    justify-content: center;
+    padding: 12px 0;
+    gap: 0;
+}
+
+body.modo-leitura-ativo {
+    cursor: zoom-in;
+}
+
+body.modo-leitura-ativo p:hover,
+body.modo-leitura-ativo h1:hover,
+body.modo-leitura-ativo h2:hover,
+body.modo-leitura-ativo h3:hover,
+body.modo-leitura-ativo h4:hover,
+body.modo-leitura-ativo li:hover,
+body.modo-leitura-ativo span:hover,
+body.modo-leitura-ativo label:hover,
+body.modo-leitura-ativo button:hover,
+body.modo-leitura-ativo a:hover {
+    
+    background-color: rgba(58, 112, 215, 0.25); 
+    
+    box-shadow: 0 0 0 4px rgba(58, 112, 215, 0.25);
+    
+    border-radius: 4px;
+    
+    transition: all 0.1s ease;
+    
+    cursor: pointer; 
+}
+
+@media (max-width: 768px) {    
+    #lateral.retraida #modo-leitura-container {
+        justify-content: flex-start !important;
+        padding: 12px 15px !important;
+        gap: 12px !important;
+    }
+
+    #lateral.retraida #modo-leitura-container p {
+        opacity: 1 !important;
+        width: auto !important;
+        pointer-events: auto !important;
+        display: block !important;
+    }
+}

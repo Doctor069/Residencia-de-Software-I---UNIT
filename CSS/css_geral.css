@@ -277,4 +277,35 @@ body {
         padding: 14px;
         width: 100%;
     }
+
+    body.modo-leitura-ativo {
+        cursor: default;
+    }
+
+    body.modo-leitura-ativo p:hover,
+    body.modo-leitura-ativo h1:hover,
+    body.modo-leitura-ativo h2:hover,
+    body.modo-leitura-ativo h3:hover,
+    body.modo-leitura-ativo li:hover,
+    body.modo-leitura-ativo span:hover,
+    body.modo-leitura-ativo label:hover,
+    body.modo-leitura-ativo button:hover,
+    body.modo-leitura-ativo a:hover {
+        background-color: transparent;
+        box-shadow: none;
+    }
+
+    body.modo-leitura-ativo p:active,
+    body.modo-leitura-ativo h1:active,
+    body.modo-leitura-ativo h2:active,
+    body.modo-leitura-ativo h3:active,
+    body.modo-leitura-ativo li:active,
+    body.modo-leitura-ativo span:active,
+    body.modo-leitura-ativo label:active,
+    body.modo-leitura-ativo button:active,
+    body.modo-leitura-ativo a:active {
+        background-color: rgba(58, 112, 215, 0.4);
+        border-radius: 4px;
+        transition: background 0.1s;
+    }
 }

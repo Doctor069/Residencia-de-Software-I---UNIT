@@ -81,6 +81,51 @@ document.addEventListener('DOMContentLoaded', function () {
     atualizarBarraDeProgresso(temaSalvo === 'light');
 
 
+    const prefixo = getPathPrefix();
+    const ICON_AUDIO_OFF = `${prefixo}/assets/icons/barra lateral/icon_audio_off.svg`;
+    const ICON_AUDIO_ON = `${prefixo}/assets/icons/barra lateral/icon_audio_on.svg`;
+
+    const btnLeitura = document.getElementById('modo-leitura-container');
+    const iconeLeitura = document.getElementById('icone-leitura');
+    let leituraAtiva = false;
+    const synth = window.speechSynthesis;
+
+    function falarTexto(texto) {
+        if (synth.speaking) {
+            synth.cancel();
+        }
+
+        if (texto && texto.trim() !== "") {
+            const utterThis = new SpeechSynthesisUtterance(texto);
+            utterThis.lang = 'pt-BR';
+            utterThis.rate = 1.0;
+            utterThis.pitch = 1.0;
+            synth.speak(utterThis);
+        }
+    }
+
+    if (btnLeitura && iconeLeitura) {
+        iconeLeitura.src = ICON_AUDIO_OFF;
+        
+        btnLeitura.title = "Ativar modo leitura: Clique em qualquer texto para ouvir"; // Tooltip explicativo
+
+        btnLeitura.addEventListener('click', function() {
+            leituraAtiva = !leituraAtiva;
+            document.body.classList.toggle('modo-leitura-ativo');
+
+            if (leituraAtiva) {
+                iconeLeitura.src = ICON_AUDIO_ON;
+                iconeLeitura.style.filter = "invert(63%) sepia(61%) saturate(452%) hue-rotate(84deg) brightness(90%) contrast(88%)"; // Verde para destaque
+                falarTexto("Modo de leitura ativado.");
+            } else {
+                iconeLeitura.src = ICON_AUDIO_OFF;
+                iconeLeitura.style.filter = "none";
+                synth.cancel();
+            }
+        });
+    }
+
+
     document.addEventListener('click', function (e) {
         
         const botaoToggle = e.target.closest('#superior-left button');
@@ -112,6 +157,45 @@ document.addEventListener('DOMContentLoaded', function () {
             
             atualizarIconeVisualmente(isLightMode);
             atualizarBarraDeProgresso(isLightMode);
+        }
+
+        if (leituraAtiva) {
+            if (e.target.closest('#modo-leitura-container')) {
+                return;
+            }
+
+            const elementoClicado = e.target;
+            const elementoInterativo = elementoClicado.closest('a') || elementoClicado.closest('button') || elementoClicado.closest('.opcao-bloco'); // Incluímos os cards de diagnóstico
+
+            if (elementoInterativo) {
+                e.preventDefault();
+                e.stopPropagation(); 
+            }
+
+            const tagsPermitidas = ['P', 'H1', 'H2', 'H3', 'H4', 'H5', 'LI', 'SPAN', 'LABEL', 'BUTTON', 'A', 'STRONG', 'B', 'DIV'];
+            
+            if (tagsPermitidas.includes(elementoClicado.tagName) || elementoInterativo) {
+                
+                let textoParaLer = "";
+
+                if (elementoClicado.innerText && elementoClicado.innerText.trim() !== "") {
+                    textoParaLer = elementoClicado.innerText;
+                } 
+                else if (elementoInterativo) {
+                    textoParaLer = elementoInterativo.innerText || elementoInterativo.textContent;
+                }
+                
+                if (elementoClicado.tagName === 'IMG' && elementoClicado.alt) {
+                    textoParaLer = "Imagem: " + elementoClicado.alt;
+                }
+
+                if (textoParaLer) {
+                    textoParaLer = textoParaLer.replace(/\n/g, ' '); 
+                    falarTexto(textoParaLer);
+                }
+            }
+            
+            return false;
         }
     });
 
