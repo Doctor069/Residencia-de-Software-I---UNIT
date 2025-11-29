@@ -215,3 +215,7 @@ body.sidebar-retraida #conteudo {
 #lateral.retraida #icone-tema {
     transform: scale(0.5);
 }
+
+body.light-mode .custom-checkbox[data-checked="true"] img {
+    filter: invert(63%) sepia(61%) saturate(452%) hue-rotate(84deg) brightness(90%) contrast(88%);
+}
